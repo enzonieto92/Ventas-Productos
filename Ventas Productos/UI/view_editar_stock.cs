@@ -25,6 +25,7 @@ namespace Ventas_Productos.UI
             _dbService = new DatabaseService();
             _producto = producto;
             lbl_producto.Text = _producto.Nombre;
+            txtbox_cantidad.Text = producto.Stock.ToString();
             _snapBehavior = new FormDragSnapBehavior(this, help_bar_panel);
         }
         private void view_stock_edicion_Load(object sender, EventArgs e)

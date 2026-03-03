@@ -108,7 +108,7 @@ namespace Ventas_Productos
             this.dgv_productos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -141,7 +141,7 @@ namespace Ventas_Productos
             this.dgv_productos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_productos.RowHeadersVisible = false;
             this.dgv_productos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(106)))), ((int)(((byte)(133)))));
             this.dgv_productos.RowsDefaultCellStyle = dataGridViewCellStyle4;
@@ -164,7 +164,7 @@ namespace Ventas_Productos
             this.btn_limpiar.Enabled = false;
             this.btn_limpiar.FlatAppearance.BorderSize = 0;
             this.btn_limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_limpiar.Font = new System.Drawing.Font("Lao Sans Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_limpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_limpiar.Location = new System.Drawing.Point(201, 438);
             this.btn_limpiar.Name = "btn_limpiar";
@@ -181,7 +181,7 @@ namespace Ventas_Productos
             this.btn_confirmar.Enabled = false;
             this.btn_confirmar.FlatAppearance.BorderSize = 0;
             this.btn_confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_confirmar.Font = new System.Drawing.Font("Lao Sans Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_confirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_confirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_confirmar.Location = new System.Drawing.Point(3, 438);
             this.btn_confirmar.Name = "btn_confirmar";
@@ -196,12 +196,12 @@ namespace Ventas_Productos
             this.txtbox_busqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtbox_busqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.txtbox_busqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbox_busqueda.Font = new System.Drawing.Font("Lao Sans Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_busqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_busqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtbox_busqueda.Location = new System.Drawing.Point(51, 8);
             this.txtbox_busqueda.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.txtbox_busqueda.Name = "txtbox_busqueda";
-            this.txtbox_busqueda.Size = new System.Drawing.Size(240, 24);
+            this.txtbox_busqueda.Size = new System.Drawing.Size(240, 22);
             this.txtbox_busqueda.TabIndex = 6;
             // 
             // lbl_total
@@ -209,12 +209,12 @@ namespace Ventas_Productos
             this.lbl_total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_total.AutoSize = true;
             this.lbl_total.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_total.Font = new System.Drawing.Font("Lao Sans Pro", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_total.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbl_total.Location = new System.Drawing.Point(272, 385);
             this.lbl_total.Name = "lbl_total";
             this.lbl_total.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
-            this.lbl_total.Size = new System.Drawing.Size(92, 50);
+            this.lbl_total.Size = new System.Drawing.Size(86, 46);
             this.lbl_total.TabIndex = 8;
             this.lbl_total.Text = "$ 0,00";
             this.lbl_total.UseCompatibleTextRendering = true;
@@ -223,12 +223,12 @@ namespace Ventas_Productos
             // 
             this.lbl_suma.AutoSize = true;
             this.lbl_suma.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_suma.Font = new System.Drawing.Font("Lao Sans Pro", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_suma.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_suma.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbl_suma.Location = new System.Drawing.Point(404, 432);
             this.lbl_suma.Name = "lbl_suma";
             this.lbl_suma.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
-            this.lbl_suma.Size = new System.Drawing.Size(0, 43);
+            this.lbl_suma.Size = new System.Drawing.Size(0, 40);
             this.lbl_suma.TabIndex = 9;
             // 
             // srch_bar_panel
@@ -272,7 +272,7 @@ namespace Ventas_Productos
             this.btn_user.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.btn_user.FlatAppearance.BorderSize = 0;
             this.btn_user.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_user.Font = new System.Drawing.Font("Lao Sans Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_user.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_user.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_user.Image = global::Ventas_Productos.Properties.Resources.user;
             this.btn_user.Location = new System.Drawing.Point(0, 0);
@@ -309,7 +309,7 @@ namespace Ventas_Productos
             this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1});
-            this.toolStripDropDownButton1.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripDropDownButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripDropDownButton1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
             this.toolStripDropDownButton1.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
@@ -331,7 +331,7 @@ namespace Ventas_Productos
             this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.pruebaToolStripMenuItem,
             this.verProductosToolStripMenuItem});
-            this.toolStripDropDownButton2.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripDropDownButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripDropDownButton2.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
@@ -342,14 +342,14 @@ namespace Ventas_Productos
             // pruebaToolStripMenuItem
             // 
             this.pruebaToolStripMenuItem.Name = "pruebaToolStripMenuItem";
-            this.pruebaToolStripMenuItem.Size = new System.Drawing.Size(202, 24);
+            this.pruebaToolStripMenuItem.Size = new System.Drawing.Size(203, 24);
             this.pruebaToolStripMenuItem.Text = "Agregar Producto";
             this.pruebaToolStripMenuItem.Click += new System.EventHandler(this.pruebaToolStripMenuItem_Click);
             // 
             // verProductosToolStripMenuItem
             // 
             this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
-            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(202, 24);
+            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(203, 24);
             this.verProductosToolStripMenuItem.Text = "Editar Productos";
             this.verProductosToolStripMenuItem.Click += new System.EventHandler(this.verProductosToolStripMenuItem_Click);
             // 
@@ -358,7 +358,7 @@ namespace Ventas_Productos
             this.toolStripDropDownButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownButton3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.verStockToolStripMenuItem});
-            this.toolStripDropDownButton3.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripDropDownButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripDropDownButton3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.toolStripDropDownButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton3.Name = "toolStripDropDownButton3";
@@ -369,14 +369,14 @@ namespace Ventas_Productos
             // verStockToolStripMenuItem
             // 
             this.verStockToolStripMenuItem.Name = "verStockToolStripMenuItem";
-            this.verStockToolStripMenuItem.Size = new System.Drawing.Size(147, 24);
+            this.verStockToolStripMenuItem.Size = new System.Drawing.Size(148, 24);
             this.verStockToolStripMenuItem.Text = "Ver Stock";
             this.verStockToolStripMenuItem.Click += new System.EventHandler(this.verStockToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton4
             // 
             this.toolStripDropDownButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButton4.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripDropDownButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripDropDownButton4.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.toolStripDropDownButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton4.Name = "toolStripDropDownButton4";
@@ -389,7 +389,7 @@ namespace Ventas_Productos
             this.toolStripDropDownButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripDropDownButton5.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.acercaDeToolStripMenuItem});
-            this.toolStripDropDownButton5.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripDropDownButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripDropDownButton5.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.toolStripDropDownButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton5.Name = "toolStripDropDownButton5";
@@ -400,7 +400,7 @@ namespace Ventas_Productos
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(150, 24);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
@@ -410,7 +410,7 @@ namespace Ventas_Productos
             this.btn_minimizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.btn_minimizar.FlatAppearance.BorderSize = 0;
             this.btn_minimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_minimizar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_minimizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_minimizar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_minimizar.Image = global::Ventas_Productos.Properties.Resources.minimize;
             this.btn_minimizar.Location = new System.Drawing.Point(822, -2);
@@ -428,7 +428,7 @@ namespace Ventas_Productos
             this.btn_max.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.btn_max.FlatAppearance.BorderSize = 0;
             this.btn_max.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_max.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_max.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_max.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_max.Image = global::Ventas_Productos.Properties.Resources.maximize;
             this.btn_max.Location = new System.Drawing.Point(846, 0);
@@ -446,7 +446,7 @@ namespace Ventas_Productos
             this.btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.btn_cerrar.FlatAppearance.BorderSize = 0;
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cerrar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_cerrar.Image = global::Ventas_Productos.Properties.Resources.x;
             this.btn_cerrar.Location = new System.Drawing.Point(873, 0);
@@ -465,12 +465,12 @@ namespace Ventas_Productos
             this.lbl_fecha_hora.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_fecha_hora.AutoSize = true;
             this.lbl_fecha_hora.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_fecha_hora.Font = new System.Drawing.Font("Lao Sans Pro", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_fecha_hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_fecha_hora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbl_fecha_hora.Location = new System.Drawing.Point(690, 32);
             this.lbl_fecha_hora.Name = "lbl_fecha_hora";
             this.lbl_fecha_hora.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
-            this.lbl_fecha_hora.Size = new System.Drawing.Size(156, 26);
+            this.lbl_fecha_hora.Size = new System.Drawing.Size(155, 25);
             this.lbl_fecha_hora.TabIndex = 17;
             this.lbl_fecha_hora.Text = "Jueves 12/12/12 59:59 hs";
             this.lbl_fecha_hora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -494,12 +494,12 @@ namespace Ventas_Productos
             // 
             this.lbl_venta.AutoSize = true;
             this.lbl_venta.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_venta.Font = new System.Drawing.Font("Lao Sans Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_venta.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_venta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbl_venta.Location = new System.Drawing.Point(47, 16);
             this.lbl_venta.Name = "lbl_venta";
             this.lbl_venta.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
-            this.lbl_venta.Size = new System.Drawing.Size(105, 36);
+            this.lbl_venta.Size = new System.Drawing.Size(109, 34);
             this.lbl_venta.TabIndex = 13;
             this.lbl_venta.Text = "Venta N°: ";
             // 
@@ -524,12 +524,12 @@ namespace Ventas_Productos
             this.lbl_borrar_seleccion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_borrar_seleccion.AutoSize = true;
             this.lbl_borrar_seleccion.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_borrar_seleccion.Font = new System.Drawing.Font("Lao Sans Pro", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_borrar_seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_borrar_seleccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
             this.lbl_borrar_seleccion.Location = new System.Drawing.Point(49, 350);
             this.lbl_borrar_seleccion.Name = "lbl_borrar_seleccion";
             this.lbl_borrar_seleccion.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
-            this.lbl_borrar_seleccion.Size = new System.Drawing.Size(108, 26);
+            this.lbl_borrar_seleccion.Size = new System.Drawing.Size(107, 25);
             this.lbl_borrar_seleccion.TabIndex = 18;
             this.lbl_borrar_seleccion.Text = "Borrar Selección";
             this.lbl_borrar_seleccion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -541,7 +541,7 @@ namespace Ventas_Productos
             this.btn_borrar_seleccion.Enabled = false;
             this.btn_borrar_seleccion.FlatAppearance.BorderSize = 0;
             this.btn_borrar_seleccion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_borrar_seleccion.Font = new System.Drawing.Font("Lao Sans Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_borrar_seleccion.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_borrar_seleccion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_borrar_seleccion.Image = global::Ventas_Productos.Properties.Resources.x;
             this.btn_borrar_seleccion.Location = new System.Drawing.Point(15, 353);
@@ -557,12 +557,12 @@ namespace Ventas_Productos
             this.lbl_total_txt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_total_txt.AutoSize = true;
             this.lbl_total_txt.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_total_txt.Font = new System.Drawing.Font("Lao Sans Pro", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total_txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_total_txt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbl_total_txt.Location = new System.Drawing.Point(174, 385);
             this.lbl_total_txt.Name = "lbl_total_txt";
             this.lbl_total_txt.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
-            this.lbl_total_txt.Size = new System.Drawing.Size(92, 50);
+            this.lbl_total_txt.Size = new System.Drawing.Size(87, 46);
             this.lbl_total_txt.TabIndex = 18;
             this.lbl_total_txt.Text = "Total: ";
             this.lbl_total_txt.UseCompatibleTextRendering = true;
@@ -600,7 +600,7 @@ namespace Ventas_Productos
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Lao Sans Pro", 12F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label3.Location = new System.Drawing.Point(391, 8);
             this.label3.Name = "label3";
@@ -614,7 +614,7 @@ namespace Ventas_Productos
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Lao Sans Pro", 12F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label2.Location = new System.Drawing.Point(208, 8);
             this.label2.Name = "label2";
@@ -627,7 +627,7 @@ namespace Ventas_Productos
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Lao Sans Pro", 12F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label1.Location = new System.Drawing.Point(33, 8);
             this.label1.Name = "label1";
@@ -651,7 +651,7 @@ namespace Ventas_Productos
             this.dgv_ventas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -684,7 +684,7 @@ namespace Ventas_Productos
             this.dgv_ventas.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_ventas.RowHeadersVisible = false;
             this.dgv_ventas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(106)))), ((int)(((byte)(133)))));
             this.dgv_ventas.RowsDefaultCellStyle = dataGridViewCellStyle8;
@@ -743,11 +743,11 @@ namespace Ventas_Productos
             // lbl_productos
             // 
             this.lbl_productos.AutoSize = true;
-            this.lbl_productos.Font = new System.Drawing.Font("Lao Sans Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_productos.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_productos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbl_productos.Location = new System.Drawing.Point(104, 20);
             this.lbl_productos.Name = "lbl_productos";
-            this.lbl_productos.Size = new System.Drawing.Size(109, 27);
+            this.lbl_productos.Size = new System.Drawing.Size(109, 25);
             this.lbl_productos.TabIndex = 2;
             this.lbl_productos.Text = "Productos";
             // 

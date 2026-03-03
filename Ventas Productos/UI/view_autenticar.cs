@@ -36,5 +36,10 @@ namespace Ventas_Productos.UI
                 this.DialogResult |= DialogResult.No;
             }
         }
+
+        private void view_autenticar_Shown(object sender, System.EventArgs e)
+        {
+            txtbox_busqueda.Focus();
+        }
     }
 }

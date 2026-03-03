@@ -34,6 +34,7 @@
             this.srch_bar_panel = new System.Windows.Forms.Panel();
             this.icono_busqueda = new System.Windows.Forms.Label();
             this.txtbox_busqueda = new System.Windows.Forms.TextBox();
+            this.help_bar_panel = new System.Windows.Forms.Panel();
             this.srch_bar_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,12 +43,12 @@
             this.lbl_fecha_hora.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl_fecha_hora.AutoSize = true;
             this.lbl_fecha_hora.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_fecha_hora.Font = new System.Drawing.Font("Lao Sans Pro", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_fecha_hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_fecha_hora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbl_fecha_hora.Location = new System.Drawing.Point(52, 25);
             this.lbl_fecha_hora.Name = "lbl_fecha_hora";
             this.lbl_fecha_hora.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
-            this.lbl_fecha_hora.Size = new System.Drawing.Size(138, 26);
+            this.lbl_fecha_hora.Size = new System.Drawing.Size(137, 25);
             this.lbl_fecha_hora.TabIndex = 18;
             this.lbl_fecha_hora.Text = "Escriba la contraseña";
             this.lbl_fecha_hora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -58,7 +59,7 @@
             this.btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.btn_cerrar.FlatAppearance.BorderSize = 0;
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cerrar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_cerrar.Image = global::Ventas_Productos.Properties.Resources.x;
             this.btn_cerrar.Location = new System.Drawing.Point(222, 0);
@@ -77,7 +78,7 @@
             this.btn_confirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.btn_confirmar.FlatAppearance.BorderSize = 0;
             this.btn_confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_confirmar.Font = new System.Drawing.Font("Lao Sans Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_confirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_confirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_confirmar.Location = new System.Drawing.Point(60, 117);
             this.btn_confirmar.Name = "btn_confirmar";
@@ -115,26 +116,39 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtbox_busqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.txtbox_busqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbox_busqueda.Font = new System.Drawing.Font("Lao Sans Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_busqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_busqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtbox_busqueda.Location = new System.Drawing.Point(47, 6);
             this.txtbox_busqueda.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.txtbox_busqueda.Name = "txtbox_busqueda";
             this.txtbox_busqueda.PasswordChar = '*';
-            this.txtbox_busqueda.Size = new System.Drawing.Size(141, 24);
+            this.txtbox_busqueda.Size = new System.Drawing.Size(141, 22);
             this.txtbox_busqueda.TabIndex = 6;
+            // 
+            // help_bar_panel
+            // 
+            this.help_bar_panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.help_bar_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.help_bar_panel.Location = new System.Drawing.Point(1, 0);
+            this.help_bar_panel.Name = "help_bar_panel";
+            this.help_bar_panel.Size = new System.Drawing.Size(245, 23);
+            this.help_bar_panel.TabIndex = 19;
             // 
             // view_autenticar
             // 
+            this.AcceptButton = this.btn_confirmar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(106)))), ((int)(((byte)(133)))));
+            this.CancelButton = this.btn_cerrar;
             this.ClientSize = new System.Drawing.Size(247, 170);
             this.ControlBox = false;
             this.Controls.Add(this.lbl_fecha_hora);
             this.Controls.Add(this.btn_cerrar);
             this.Controls.Add(this.btn_confirmar);
             this.Controls.Add(this.srch_bar_panel);
+            this.Controls.Add(this.help_bar_panel);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
@@ -144,6 +158,7 @@
             this.ShowInTaskbar = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Shown += new System.EventHandler(this.view_autenticar_Shown);
             this.srch_bar_panel.ResumeLayout(false);
             this.srch_bar_panel.PerformLayout();
             this.ResumeLayout(false);
@@ -159,5 +174,6 @@
         private System.Windows.Forms.TextBox txtbox_busqueda;
         private System.Windows.Forms.Button btn_cerrar;
         private System.Windows.Forms.Label lbl_fecha_hora;
+        private System.Windows.Forms.Panel help_bar_panel;
     }
 }

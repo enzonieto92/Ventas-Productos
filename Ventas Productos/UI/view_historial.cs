@@ -163,11 +163,13 @@ namespace Ventas_Productos.UI
         private void btn_esta_semana_Click(object sender, EventArgs e)
         {
             seleccionar(btn_esta_semana);
-            DateTime Fecha = DateTime.Now;
-            int Mes = Fecha.Month;
-            int Año = Fecha.Year;
-            DateTime desde = new DateTime(Año, Mes, Fecha.Day - 7);
-            DateTime hasta = desde.AddDays(7);
+            DateTime hoy = DateTime.Now;
+
+            // Calcular cuántos días han pasado desde el lunes
+            int diasDesdeElLunes = ((int)hoy.DayOfWeek - (int)DayOfWeek.Monday + 7) % 7;
+
+            DateTime desde = hoy.AddDays(-diasDesdeElLunes).Date; // Lunes a las 00:00:00
+            DateTime hasta = desde.AddDays(7);                    // Domingo a las 00:00:00 (o usa hoy si no quieres días futuros)
 
             CargarVentas(desde, hasta);
         }
@@ -175,10 +177,8 @@ namespace Ventas_Productos.UI
         private void btn_hoy_Click(object sender, EventArgs e)
         {
             seleccionar(btn_hoy);
-            DateTime Fecha = DateTime.Now;
-            DateTime desde = Fecha.AddDays(-1);
-            DateTime hasta = Fecha;
-
+            DateTime desde = DateTime.Today;        // Hoy a las 00:00:00
+            DateTime hasta = DateTime.Now;          // Ahora (hora actual)
             CargarVentas(desde, hasta);
         }
     }
