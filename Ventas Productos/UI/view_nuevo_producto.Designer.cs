@@ -41,7 +41,7 @@ namespace Ventas_Productos.UI
             this.icono_busqueda = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtbox_cod_barras = new System.Windows.Forms.TextBox();
-            this.txtbox_precio = new System.Windows.Forms.TextBox();
+            this.txtbox_precio_costo = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -62,9 +62,8 @@ namespace Ventas_Productos.UI
             this.label7 = new System.Windows.Forms.Label();
             this.btn_confirmar = new System.Windows.Forms.Button();
             this.btn_limpiar = new System.Windows.Forms.Button();
-            this.lbl_precio_final = new System.Windows.Forms.Label();
-            this.lbl_precio_porcentaje = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.txtbox_precio_venta = new System.Windows.Forms.TextBox();
             this.srch_bar_panel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -75,11 +74,11 @@ namespace Ventas_Productos.UI
             // lbl_productos
             // 
             this.lbl_productos.AutoSize = true;
-            this.lbl_productos.Font = new System.Drawing.Font("Lao Sans Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_productos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_productos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbl_productos.Location = new System.Drawing.Point(132, 66);
             this.lbl_productos.Name = "lbl_productos";
-            this.lbl_productos.Size = new System.Drawing.Size(186, 31);
+            this.lbl_productos.Size = new System.Drawing.Size(186, 29);
             this.lbl_productos.TabIndex = 0;
             this.lbl_productos.Text = "Nuevo Producto";
             // 
@@ -99,7 +98,7 @@ namespace Ventas_Productos.UI
             this.btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.btn_cerrar.FlatAppearance.BorderSize = 0;
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cerrar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_cerrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_cerrar.Image")));
             this.btn_cerrar.Location = new System.Drawing.Point(399, 0);
@@ -140,12 +139,12 @@ namespace Ventas_Productos.UI
             this.txtbox_nombre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtbox_nombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.txtbox_nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbox_nombre.Font = new System.Drawing.Font("Lao Sans Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_nombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtbox_nombre.Location = new System.Drawing.Point(66, 8);
             this.txtbox_nombre.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.txtbox_nombre.Name = "txtbox_nombre";
-            this.txtbox_nombre.Size = new System.Drawing.Size(178, 24);
+            this.txtbox_nombre.Size = new System.Drawing.Size(178, 22);
             this.txtbox_nombre.TabIndex = 1;
             this.txtbox_nombre.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbox_nombre_KeyDown);
             // 
@@ -176,37 +175,37 @@ namespace Ventas_Productos.UI
             this.txtbox_cod_barras.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.txtbox_cod_barras.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.txtbox_cod_barras.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbox_cod_barras.Font = new System.Drawing.Font("Lao Sans Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_cod_barras.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_cod_barras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtbox_cod_barras.Location = new System.Drawing.Point(66, 8);
             this.txtbox_cod_barras.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.txtbox_cod_barras.Name = "txtbox_cod_barras";
-            this.txtbox_cod_barras.Size = new System.Drawing.Size(180, 24);
+            this.txtbox_cod_barras.Size = new System.Drawing.Size(180, 22);
             this.txtbox_cod_barras.TabIndex = 2;
             this.txtbox_cod_barras.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbox_cod_barras_KeyDown);
             // 
-            // txtbox_precio
+            // txtbox_precio_costo
             // 
-            this.txtbox_precio.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtbox_precio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.txtbox_precio.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbox_precio.Font = new System.Drawing.Font("Lao Sans Pro", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbox_precio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtbox_precio.Location = new System.Drawing.Point(66, 8);
-            this.txtbox_precio.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
-            this.txtbox_precio.Name = "txtbox_precio";
-            this.txtbox_precio.Size = new System.Drawing.Size(178, 24);
-            this.txtbox_precio.TabIndex = 3;
-            this.txtbox_precio.TextChanged += new System.EventHandler(this.txtbox_precio_TextChanged);
-            this.txtbox_precio.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbox_precio_KeyDown);
-            this.txtbox_precio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_precio_KeyPress);
+            this.txtbox_precio_costo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtbox_precio_costo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.txtbox_precio_costo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbox_precio_costo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_precio_costo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtbox_precio_costo.Location = new System.Drawing.Point(66, 8);
+            this.txtbox_precio_costo.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
+            this.txtbox_precio_costo.Name = "txtbox_precio_costo";
+            this.txtbox_precio_costo.Size = new System.Drawing.Size(178, 22);
+            this.txtbox_precio_costo.TabIndex = 3;
+            this.txtbox_precio_costo.TextChanged += new System.EventHandler(this.txtbox_precio_TextChanged);
+            this.txtbox_precio_costo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbox_precio_KeyDown);
+            this.txtbox_precio_costo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_precio_KeyPress);
             // 
             // panel2
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.txtbox_precio);
+            this.panel2.Controls.Add(this.txtbox_precio_costo);
             this.panel2.Location = new System.Drawing.Point(76, 283);
             this.panel2.MaximumSize = new System.Drawing.Size(265, 37);
             this.panel2.Name = "panel2";
@@ -226,7 +225,7 @@ namespace Ventas_Productos.UI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label3.Location = new System.Drawing.Point(87, 129);
             this.label3.Name = "label3";
@@ -237,24 +236,24 @@ namespace Ventas_Productos.UI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label4.Location = new System.Drawing.Point(87, 198);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 20);
+            this.label4.Size = new System.Drawing.Size(132, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Código de Barras";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label5.Location = new System.Drawing.Point(87, 263);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 20);
+            this.label5.Size = new System.Drawing.Size(121, 20);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Precio";
+            this.label5.Text = "Precio de Costo";
             // 
             // tlsp_porcentaje
             // 
@@ -292,7 +291,7 @@ namespace Ventas_Productos.UI
             this.toolStripMenuItem8,
             this.toolStripMenuItem10,
             this.toolStripMenuItem9});
-            this.toolStripDropDownButton1.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripDropDownButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripDropDownButton1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.toolStripDropDownButton1.Image = global::Ventas_Productos.Properties.Resources.percentage;
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -311,7 +310,7 @@ namespace Ventas_Productos.UI
             // 
             this.toolStripMenuItem1.AutoSize = false;
             this.toolStripMenuItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Lao Sans Pro", 12F);
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem1.Text = "0%";
@@ -320,7 +319,7 @@ namespace Ventas_Productos.UI
             // 
             this.toolStripMenuItem2.AutoSize = false;
             this.toolStripMenuItem2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripMenuItem2.Font = new System.Drawing.Font("Lao Sans Pro", 12F);
+            this.toolStripMenuItem2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
             this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem2.Text = "10%";
@@ -329,7 +328,7 @@ namespace Ventas_Productos.UI
             // 
             this.toolStripMenuItem3.AutoSize = false;
             this.toolStripMenuItem3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripMenuItem3.Font = new System.Drawing.Font("Lao Sans Pro", 12F);
+            this.toolStripMenuItem3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
             this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem3.Text = "15%";
@@ -338,7 +337,7 @@ namespace Ventas_Productos.UI
             // 
             this.toolStripMenuItem4.AutoSize = false;
             this.toolStripMenuItem4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripMenuItem4.Font = new System.Drawing.Font("Lao Sans Pro", 12F);
+            this.toolStripMenuItem4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem4.Text = "25%";
@@ -347,7 +346,7 @@ namespace Ventas_Productos.UI
             // 
             this.toolStripMenuItem6.AutoSize = false;
             this.toolStripMenuItem6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripMenuItem6.Font = new System.Drawing.Font("Lao Sans Pro", 12F);
+            this.toolStripMenuItem6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.toolStripMenuItem6.Name = "toolStripMenuItem6";
             this.toolStripMenuItem6.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem6.Text = "30%";
@@ -356,7 +355,7 @@ namespace Ventas_Productos.UI
             // 
             this.toolStripMenuItem7.AutoSize = false;
             this.toolStripMenuItem7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripMenuItem7.Font = new System.Drawing.Font("Lao Sans Pro", 12F);
+            this.toolStripMenuItem7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
             this.toolStripMenuItem7.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem7.Text = "50%";
@@ -365,7 +364,7 @@ namespace Ventas_Productos.UI
             // 
             this.toolStripMenuItem5.AutoSize = false;
             this.toolStripMenuItem5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripMenuItem5.Font = new System.Drawing.Font("Lao Sans Pro", 12F);
+            this.toolStripMenuItem5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.toolStripMenuItem5.Name = "toolStripMenuItem5";
             this.toolStripMenuItem5.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem5.Text = "75%";
@@ -374,7 +373,7 @@ namespace Ventas_Productos.UI
             // 
             this.toolStripMenuItem8.AutoSize = false;
             this.toolStripMenuItem8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripMenuItem8.Font = new System.Drawing.Font("Lao Sans Pro", 12F);
+            this.toolStripMenuItem8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
             this.toolStripMenuItem8.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem8.Text = "100%";
@@ -383,7 +382,7 @@ namespace Ventas_Productos.UI
             // 
             this.toolStripMenuItem10.AutoSize = false;
             this.toolStripMenuItem10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripMenuItem10.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.toolStripMenuItem10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripMenuItem10.Name = "toolStripMenuItem10";
             this.toolStripMenuItem10.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem10.Text = "150%";
@@ -392,7 +391,7 @@ namespace Ventas_Productos.UI
             // 
             this.toolStripMenuItem9.AutoSize = false;
             this.toolStripMenuItem9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripMenuItem9.Font = new System.Drawing.Font("Lao Sans Pro", 12F);
+            this.toolStripMenuItem9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
             this.toolStripMenuItem9.Size = new System.Drawing.Size(180, 24);
             this.toolStripMenuItem9.Text = "200%";
@@ -400,13 +399,13 @@ namespace Ventas_Productos.UI
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.label7.Location = new System.Drawing.Point(87, 326);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(145, 20);
+            this.label7.Size = new System.Drawing.Size(122, 20);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Agregar Porcentaje";
+            this.label7.Text = "Precio de Venta";
             // 
             // btn_confirmar
             // 
@@ -414,7 +413,7 @@ namespace Ventas_Productos.UI
             this.btn_confirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.btn_confirmar.FlatAppearance.BorderSize = 0;
             this.btn_confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_confirmar.Font = new System.Drawing.Font("Lao Sans Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_confirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_confirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_confirmar.Location = new System.Drawing.Point(78, 455);
             this.btn_confirmar.Name = "btn_confirmar";
@@ -430,7 +429,7 @@ namespace Ventas_Productos.UI
             this.btn_limpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.btn_limpiar.FlatAppearance.BorderSize = 0;
             this.btn_limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_limpiar.Font = new System.Drawing.Font("Lao Sans Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_limpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_limpiar.Location = new System.Drawing.Point(225, 455);
             this.btn_limpiar.Name = "btn_limpiar";
@@ -440,37 +439,27 @@ namespace Ventas_Productos.UI
             this.btn_limpiar.UseVisualStyleBackColor = false;
             this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
             // 
-            // lbl_precio_final
-            // 
-            this.lbl_precio_final.AutoSize = true;
-            this.lbl_precio_final.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_precio_final.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lbl_precio_final.Location = new System.Drawing.Point(7, 8);
-            this.lbl_precio_final.Name = "lbl_precio_final";
-            this.lbl_precio_final.Size = new System.Drawing.Size(94, 20);
-            this.lbl_precio_final.TabIndex = 0;
-            this.lbl_precio_final.Text = "Precio Final:";
-            // 
-            // lbl_precio_porcentaje
-            // 
-            this.lbl_precio_porcentaje.AutoSize = true;
-            this.lbl_precio_porcentaje.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_precio_porcentaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lbl_precio_porcentaje.Location = new System.Drawing.Point(96, 8);
-            this.lbl_precio_porcentaje.Name = "lbl_precio_porcentaje";
-            this.lbl_precio_porcentaje.Size = new System.Drawing.Size(52, 20);
-            this.lbl_precio_porcentaje.TabIndex = 0;
-            this.lbl_precio_porcentaje.Text = "$ 0.00";
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.panel3.Controls.Add(this.lbl_precio_final);
-            this.panel3.Controls.Add(this.lbl_precio_porcentaje);
+            this.panel3.Controls.Add(this.txtbox_precio_venta);
             this.panel3.Location = new System.Drawing.Point(125, 349);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(216, 37);
             this.panel3.TabIndex = 0;
+            // 
+            // txtbox_precio_venta
+            // 
+            this.txtbox_precio_venta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtbox_precio_venta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.txtbox_precio_venta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbox_precio_venta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_precio_venta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtbox_precio_venta.Location = new System.Drawing.Point(19, 7);
+            this.txtbox_precio_venta.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
+            this.txtbox_precio_venta.Name = "txtbox_precio_venta";
+            this.txtbox_precio_venta.Size = new System.Drawing.Size(178, 22);
+            this.txtbox_precio_venta.TabIndex = 4;
             // 
             // view_nuevo_producto
             // 
@@ -523,7 +512,7 @@ namespace Ventas_Productos.UI
         private TextBox txtbox_nombre;
         private Panel panel1;
         private Label label1;
-        private TextBox txtbox_precio;
+        private TextBox txtbox_precio_costo;
         private Panel panel2;
         private Label label2;
         private TextBox txtbox_cod_barras;
@@ -534,8 +523,6 @@ namespace Ventas_Productos.UI
         private Label label7;
         private Button btn_confirmar;
         private Button btn_limpiar;
-        private Label lbl_precio_final;
-        private Label lbl_precio_porcentaje;
         private ToolStripDropDownButton toolStripDropDownButton1;
         private Panel panel3;
         private ToolStripMenuItem toolStripMenuItem1;
@@ -548,5 +535,6 @@ namespace Ventas_Productos.UI
         private ToolStripMenuItem toolStripMenuItem8;
         private ToolStripMenuItem toolStripMenuItem10;
         private ToolStripMenuItem toolStripMenuItem9;
+        private TextBox txtbox_precio_venta;
     }
 }

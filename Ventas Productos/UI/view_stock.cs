@@ -66,12 +66,12 @@ namespace Ventas_Productos.UI
         }
         private void CargarProductos()
         {
-
             var productos = _dbService.ObtenerStock(_scannerBuffer);
 
             dgv_productos.DataSource = productos;
             dgv_productos.Columns.Remove("CodigoBarras");
-            dgv_productos.Columns.Remove("Precio");
+            dgv_productos.Columns.Remove("PrecioVenta");
+            dgv_productos.Columns.Remove("PrecioCosto");
             dgv_productos.Columns.Remove("Id");
             dgv_productos.Columns["Stock"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             ActualizarScroll();
@@ -127,5 +127,25 @@ namespace Ventas_Productos.UI
             }
         }
 
+        private void dgv_productos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var producto = (ProductoStock)dgv_productos.SelectedRows[0].DataBoundItem;
+            view_autenticar aut = new view_autenticar();
+            var resultado = aut.ShowDialog();
+
+            if (resultado == DialogResult.OK)
+            {
+                view_editar_stock view = new view_editar_stock(producto);
+                view.ShowDialog();
+            }
+            else if (resultado == DialogResult.No)
+            {
+                {
+                    MessageBox.Show("Contraseña incorrecta");
+                }
+
+                CargarProductos();
+            }
+        }
     }
 }

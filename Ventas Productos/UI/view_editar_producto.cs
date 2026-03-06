@@ -25,7 +25,8 @@ namespace Ventas_Productos.UI
             id = producto.Id;
             txtbox_nombre.Text = producto.Nombre;
             txtbox_cod_barras.Text = producto.CodigoBarras;
-            txtbox_precio.Text = producto.Precio.ToString();
+            txtbox_precio_costo.Text = producto.PrecioCosto.ToString();
+            txtbox_precio_venta.Text = producto.PrecioVenta.ToString();
             toolStripDropDownButton1.AutoSize = false;
             toolStripDropDownButton1.Width = 50;
         }
@@ -62,7 +63,7 @@ namespace Ventas_Productos.UI
                     return;
                 Producto producto = new Producto();
                 producto.Nombre = txtbox_nombre.Text;
-                producto.Precio = resultado;
+                producto.PrecioVenta = resultado;
                 producto.CodigoBarras = txtbox_cod_barras.Text;
                 producto.Id = id;
                 _dbService.EditarProducto(producto);
@@ -73,13 +74,13 @@ namespace Ventas_Productos.UI
 
         private void txtbox_precio_TextChanged(object sender, EventArgs e)
         {
-            if (txtbox_precio.Text != "")
+            if (txtbox_precio_costo.Text != "")
             {
                 CalcularPorcentaje();
             }
             else
             {
-                lbl_precio_porcentaje.Text = "$ 0,00";
+                txtbox_precio_venta.Text = "$ 0,00";
             }
         }
         private void CalcularPorcentaje()
@@ -90,21 +91,21 @@ namespace Ventas_Productos.UI
             texto = texto.TrimEnd('%');    // ← saca el %
 
             var porcentaje = Decimal.Parse(texto);
-            var precio = Decimal.Parse(txtbox_precio.Text);
+            var precio = Decimal.Parse(txtbox_precio_costo.Text);
 
             resultado = precio + (precio * porcentaje / 100);
 
-            lbl_precio_porcentaje.Text = resultado.ToString("$ #,##0.00");
+            txtbox_precio_venta.Text = resultado.ToString("$ #,##0.00");
         }
         private void toolStripDropDownButton1_DropDownItemClicked(
             object sender, ToolStripItemClickedEventArgs e)
         {
             toolStripDropDownButton1.Text = TextoFijo(e.ClickedItem.Text, 4);
 
-            if (!string.IsNullOrWhiteSpace(txtbox_precio.Text))
+            if (!string.IsNullOrWhiteSpace(txtbox_precio_costo.Text))
                 CalcularPorcentaje();
             else
-                lbl_precio_porcentaje.Text = "$ 0,00";
+                txtbox_precio_venta.Text = "$ 0,00";
         }
         private string TextoFijo(string texto, int largo)
         {
@@ -128,7 +129,7 @@ namespace Ventas_Productos.UI
                 return;
 
             // Permitir separador decimal UNA sola vez
-            if (e.KeyChar == ',' && !txtbox_precio.Text.Contains(","))
+            if (e.KeyChar == ',' && !txtbox_precio_costo.Text.Contains(","))
                 return;
 
             // Todo lo demás, afuera
@@ -140,7 +141,7 @@ namespace Ventas_Productos.UI
             if (e.KeyCode == Keys.Enter)
             {
                 e.SuppressKeyPress = true;
-                txtbox_precio.Focus();
+                txtbox_precio_costo.Focus();
             }
         }
 
@@ -167,7 +168,7 @@ namespace Ventas_Productos.UI
         {
             txtbox_nombre.Text = "";
             txtbox_cod_barras.Text = "";
-            txtbox_precio.Text = "";
+            txtbox_precio_costo.Text = "";
             toolStripDropDownButton1.Text = "0%";
         }
     }

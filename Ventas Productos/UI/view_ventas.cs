@@ -135,11 +135,13 @@ namespace Ventas_Productos
             var productos = dbService.ObtenerProductosConStock(_scannerBuffer.ToString());
             dgv_productos.DataSource = productos;
             dgv_productos.Columns.Remove("CodigoBarras");
+            dgv_productos.Columns.Remove("PrecioCosto");
             dgv_productos.Columns.Remove("Id");
             dgv_productos.Columns.Remove("Stock");
+
             dgv_productos.ClearSelection();
-            dgv_productos.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgv_productos.Columns["Precio"].DefaultCellStyle.Format = "C2";
+            dgv_productos.Columns["PrecioVenta"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+            dgv_productos.Columns["PrecioVenta"].DefaultCellStyle.Format = "C2";
             ActualizarScroll();
         }
         private void CargarPanelVentas()
@@ -280,7 +282,7 @@ namespace Ventas_Productos
                 {
                     Id = producto.Id,
                     Nombre = producto.Nombre,
-                    Precio = producto.Precio,
+                    Precio = producto.PrecioVenta,
                     Cantidad = 1
                 });
             }

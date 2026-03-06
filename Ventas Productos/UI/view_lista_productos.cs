@@ -146,8 +146,8 @@ namespace Ventas_Productos.UI
             colEditar.DisplayIndex = dgv_productos.Columns.Count - 1;
             colEliminar.DisplayIndex = dgv_productos.Columns.Count - 1;
             dgv_productos.ClearSelection();
-            dgv_productos.Columns["Precio"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_productos.Columns["Precio"].DefaultCellStyle.Format = "C2";
+            dgv_productos.Columns["PrecioVenta"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_productos.Columns["PrecioVenta"].DefaultCellStyle.Format = "C2";
             ActualizarScroll();
         }
         private void ActualizarScroll()

@@ -51,7 +51,7 @@ namespace Ventas_Productos.Data
                             {
                                 Id = Convert.ToInt32(reader.GetValue(0)),
                                 Nombre = reader.GetString(1),
-                                Precio = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture),
+                                PrecioVenta = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture),
                                 CodigoBarras = reader.IsDBNull(3) ? null : reader.GetString(3)
                             };
                         }
@@ -89,7 +89,7 @@ namespace Ventas_Productos.Data
                 {
                     cmd.Parameters.AddWithValue("id", producto.Id);
                     cmd.Parameters.AddWithValue("@nombre", producto.Nombre); 
-                    cmd.Parameters.AddWithValue("@precio", producto.Precio);
+                    cmd.Parameters.AddWithValue("@precio", producto.PrecioVenta);
                     cmd.Parameters.AddWithValue("@cod_barras", producto.CodigoBarras);
                     int filasAfectadas = cmd.ExecuteNonQuery(); 
                     if (filasAfectadas > 0) 
@@ -108,25 +108,27 @@ namespace Ventas_Productos.Data
 
                 if (string.IsNullOrWhiteSpace(busqueda))
                 {
-                    sql = @"SELECT Id, nombre, precio, cod_barras 
+                    sql = @"SELECT Id, nombre, precio_costo, precio_venta, cod_barras 
                         FROM Productos 
                         WHERE activo = 1
                         ORDER BY nombre COLLATE NOCASE ASC;";
                 }
                 else if (busqueda.All(char.IsLetter))
                 {
-                    sql = @"SELECT Id, nombre, precio, cod_barras
+                    sql = @"SELECT Id, nombre, precio_costo, precio_venta, cod_barras
                         FROM Productos
                         WHERE nombre LIKE '%' || @busqueda || '%'
+                        AND activo = 1
                         ORDER BY nombre COLLATE NOCASE ASC;";
                 }
                 else
                 {
                     sql = @"
-                        SELECT Id, nombre, precio, cod_barras
+                        SELECT Id, nombre, precio_costo, precio_venta, cod_barras
                         FROM Productos
                         WHERE
-                            cod_barras = @busqueda
+                            activo = 1
+                            AND cod_barras = @busqueda
                             OR (
                                 NOT EXISTS (
                                     SELECT 1
@@ -156,8 +158,9 @@ namespace Ventas_Productos.Data
                                 {
                                     Id = Convert.ToInt32(reader.GetValue(0)),
                                     Nombre = reader.GetString(1),
-                                    Precio = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture),
-                                    CodigoBarras = reader.IsDBNull(3) ? null : reader.GetString(3)
+                                    PrecioCosto = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture),
+                                    PrecioVenta = Convert.ToDecimal(reader.GetValue(3), CultureInfo.InvariantCulture),
+                                    CodigoBarras = reader.IsDBNull(4) ? null : reader.GetString(4)
                                 });
                             }
                         }
@@ -181,7 +184,8 @@ namespace Ventas_Productos.Data
                         sql = @"SELECT 
                                 p.Id,
                                 p.nombre,
-                                p.precio,
+                                p.precio_costo,
+                                p.precio_venta,
                                 p.cod_barras,
                                 s.cantidad AS stock
                             FROM Productos p
@@ -194,7 +198,8 @@ namespace Ventas_Productos.Data
                         sql = @"SELECT
                                 p.Id,
                                 p.nombre,
-                                p.precio,
+                                p.precio_costo,
+                                p.precio_venta,
                                 p.cod_barras,
                                 s.cantidad AS stock
                             FROM Productos p
@@ -208,7 +213,8 @@ namespace Ventas_Productos.Data
                                 SELECT 
                                     p.Id,
                                     p.nombre,
-                                    p.precio,
+                                    p.precio_costo,
+                                    p.precio_venta,
                                     p.cod_barras,
                                     s.cantidad AS stock
                                 FROM Productos p
@@ -246,9 +252,10 @@ namespace Ventas_Productos.Data
                                 {
                                     Id = Convert.ToInt32(reader.GetValue(0)),
                                     Nombre = reader.GetString(1),
-                                    Precio = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture),
-                                    CodigoBarras = reader.IsDBNull(3) ? null : reader.GetString(3),
-                                    Stock = Convert.ToInt32(reader.GetValue(4))
+                                    PrecioCosto = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture),
+                                    PrecioVenta = Convert.ToDecimal(reader.GetValue(3), CultureInfo.InvariantCulture),
+                                    CodigoBarras = reader.IsDBNull(4) ? null : reader.GetString(4),
+                                    Stock = Convert.ToInt32(reader.GetValue(5))
                                 });
                             }
                         }
@@ -272,7 +279,8 @@ namespace Ventas_Productos.Data
                         sql = @"SELECT 
                                 p.Id,
                                 p.nombre,
-                                p.precio,
+                                p.precio_costo,
+                                p.precio_venta,
                                 p.cod_barras,
                                 s.cantidad AS stock
                             FROM Productos p
@@ -285,7 +293,8 @@ namespace Ventas_Productos.Data
                         sql = @"SELECT
                                 p.Id,
                                 p.nombre,
-                                p.precio,
+                                p.precio_costo,
+                                p.precio_venta,
                                 p.cod_barras,
                                 s.cantidad AS stock
                             FROM Productos p
@@ -298,7 +307,8 @@ namespace Ventas_Productos.Data
                         sql = @"SELECT 
                                 p.Id,
                                 p.nombre,
-                                p.precio,
+                                p.precio_costo,
+                                p.precio_venta,
                                 p.cod_barras,
                                 s.cantidad AS stock
                             FROM Productos p
@@ -333,9 +343,10 @@ namespace Ventas_Productos.Data
                                 {
                                     Id = Convert.ToInt32(reader.GetValue(0)),
                                     Nombre = reader.GetString(1),
-                                    Precio = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture),
-                                    CodigoBarras = reader.IsDBNull(3) ? null : reader.GetString(3),
-                                    Stock = Convert.ToInt32(reader.GetValue(4))
+                                    PrecioCosto = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture),
+                                    PrecioVenta = Convert.ToDecimal(reader.GetValue(3), CultureInfo.InvariantCulture),
+                                    CodigoBarras = reader.IsDBNull(4) ? null : reader.GetString(4),
+                                    Stock = Convert.ToInt32(reader.GetValue(5))
                                 });
                             }
                         }
@@ -529,18 +540,16 @@ namespace Ventas_Productos.Data
                             cmd.Transaction = tx;
 
                             cmd.CommandText = @"
-                                INSERT INTO Productos (nombre, precio, cod_barras, activo)
-                                VALUES (@nombre, @precio, @cod_barras, 1);
+                                INSERT INTO Productos (nombre, precio_costo, precio_venta, cod_barras, activo)
+                                VALUES (@nombre, @precio_costo, @precio_venta, @cod_barras, 1);
 
                                 SELECT last_insert_rowid();
                             ";
 
                             cmd.Parameters.AddWithValue("@nombre", producto.Nombre);
-                            cmd.Parameters.AddWithValue(
-                                "@precio",
-                                producto.Precio.ToString(CultureInfo.InvariantCulture));
+                            cmd.Parameters.AddWithValue("@precio_costo", producto.PrecioCosto.ToString(CultureInfo.InvariantCulture));
+                            cmd.Parameters.AddWithValue("@precio_venta", producto.PrecioVenta.ToString(CultureInfo.InvariantCulture));
                             cmd.Parameters.AddWithValue("@cod_barras", producto.CodigoBarras);
-
                             productoId = Convert.ToInt64(cmd.ExecuteScalar());
                         }
 
