@@ -37,7 +37,8 @@ namespace Ventas_Productos.Data
             {
                 string sql = @"SELECT Id, nombre, precio, cod_barras 
                                FROM Productos 
-                               WHERE Id = @id";
+                               WHERE Id = @id
+                               AND activo = 1";
 
                 using (var cmd = new SqliteCommand(sql, conn))
                 {
@@ -84,12 +85,13 @@ namespace Ventas_Productos.Data
         {
             using (var conn = CrearConexion())
             {
-                string sql = "UPDATE Productos SET Nombre = @nombre, Precio = @precio, cod_barras = @cod_barras WHERE Id = @id";
+                string sql = "UPDATE Productos SET Nombre = @nombre, precio_costo = @precio_costo, precio_venta = @precio_venta, cod_barras = @cod_barras WHERE Id = @id";
                 using (var cmd = new SqliteCommand(sql,conn))
                 {
                     cmd.Parameters.AddWithValue("id", producto.Id);
                     cmd.Parameters.AddWithValue("@nombre", producto.Nombre); 
-                    cmd.Parameters.AddWithValue("@precio", producto.PrecioVenta);
+                    cmd.Parameters.AddWithValue("@precio_costo", producto.PrecioCosto);
+                    cmd.Parameters.AddWithValue("@precio_venta", producto.PrecioVenta);
                     cmd.Parameters.AddWithValue("@cod_barras", producto.CodigoBarras);
                     int filasAfectadas = cmd.ExecuteNonQuery(); 
                     if (filasAfectadas > 0) 

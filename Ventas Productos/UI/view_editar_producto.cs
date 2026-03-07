@@ -63,6 +63,7 @@ namespace Ventas_Productos.UI
                     return;
                 Producto producto = new Producto();
                 producto.Nombre = txtbox_nombre.Text;
+                producto.PrecioCosto = Decimal.Parse(txtbox_precio_costo.Text);
                 producto.PrecioVenta = resultado;
                 producto.CodigoBarras = txtbox_cod_barras.Text;
                 producto.Id = id;
@@ -94,8 +95,8 @@ namespace Ventas_Productos.UI
             var precio = Decimal.Parse(txtbox_precio_costo.Text);
 
             resultado = precio + (precio * porcentaje / 100);
-
-            txtbox_precio_venta.Text = resultado.ToString("$ #,##0.00");
+            resultado = Math.Round(resultado / 100, 0) * 100;
+            txtbox_precio_venta.Text = resultado.ToString("#,##0.00");
         }
         private void toolStripDropDownButton1_DropDownItemClicked(
             object sender, ToolStripItemClickedEventArgs e)

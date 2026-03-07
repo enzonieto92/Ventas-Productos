@@ -38,6 +38,19 @@ namespace Ventas_Productos.UI
                 CultureInfo.GetCultureInfo("es-AR");
             dgv_historial.ClearSelection();
             ActualizarScroll();
+            CalcularTotal();
+        }
+        private void CalcularTotal()
+        {
+            Decimal Total = 0;
+            foreach (DataGridViewRow row in dgv_historial.Rows)
+            {
+                if (row.Cells["Total"].Value != null)
+                {
+                    Total += Convert.ToDecimal(row.Cells["Total"].Value);
+                }
+            }
+            lbl_total_acumulado.Text = Total.ToString("N2", new System.Globalization.CultureInfo("es-AR"));
         }
         private void CargarVentas(DateTime desde, DateTime hasta)
         {
@@ -52,6 +65,7 @@ namespace Ventas_Productos.UI
                 CultureInfo.GetCultureInfo("es-AR");
             dgv_historial.ClearSelection();
             ActualizarScroll();
+            CalcularTotal();
         }
         private void dgv_productos_MouseWheel(object sender, MouseEventArgs e)
         {

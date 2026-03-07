@@ -286,6 +286,7 @@ namespace Ventas_Productos
                     Cantidad = 1
                 });
             }
+            txtbox_busqueda.Clear();
         }
         protected override void WndProc(ref Message m)
         {

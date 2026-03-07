@@ -62,9 +62,9 @@ namespace Ventas_Productos.UI
             this.btn_confirmar = new System.Windows.Forms.Button();
             this.btn_limpiar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_cerrar = new System.Windows.Forms.Button();
-            this.txtbox_precio_venta = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtbox_precio_venta = new System.Windows.Forms.TextBox();
+            this.btn_cerrar = new System.Windows.Forms.Button();
             this.srch_bar_panel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -172,7 +172,7 @@ namespace Ventas_Productos.UI
             this.txtbox_precio_costo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtbox_precio_costo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtbox_precio_costo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtbox_precio_costo.Location = new System.Drawing.Point(66, 8);
+            this.txtbox_precio_costo.Location = new System.Drawing.Point(72, 9);
             this.txtbox_precio_costo.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
             this.txtbox_precio_costo.Name = "txtbox_precio_costo";
             this.txtbox_precio_costo.Size = new System.Drawing.Size(178, 22);
@@ -199,7 +199,7 @@ namespace Ventas_Productos.UI
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label6.Location = new System.Drawing.Point(45, 11);
+            this.label6.Location = new System.Drawing.Point(49, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(18, 20);
             this.label6.TabIndex = 0;
@@ -442,6 +442,30 @@ namespace Ventas_Productos.UI
             this.panel3.Size = new System.Drawing.Size(216, 37);
             this.panel3.TabIndex = 0;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label8.Location = new System.Drawing.Point(0, 10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(18, 20);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "$";
+            // 
+            // txtbox_precio_venta
+            // 
+            this.txtbox_precio_venta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtbox_precio_venta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.txtbox_precio_venta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbox_precio_venta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_precio_venta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtbox_precio_venta.Location = new System.Drawing.Point(23, 8);
+            this.txtbox_precio_venta.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
+            this.txtbox_precio_venta.Name = "txtbox_precio_venta";
+            this.txtbox_precio_venta.Size = new System.Drawing.Size(178, 22);
+            this.txtbox_precio_venta.TabIndex = 4;
+            // 
             // btn_cerrar
             // 
             this.btn_cerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -461,30 +485,6 @@ namespace Ventas_Productos.UI
             this.btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             this.btn_cerrar.MouseEnter += new System.EventHandler(this.btn_cerrar_MouseEnter);
             this.btn_cerrar.MouseLeave += new System.EventHandler(this.btn_cerrar_MouseLeave);
-            // 
-            // txtbox_precio_venta
-            // 
-            this.txtbox_precio_venta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtbox_precio_venta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.txtbox_precio_venta.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbox_precio_venta.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbox_precio_venta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtbox_precio_venta.Location = new System.Drawing.Point(19, 7);
-            this.txtbox_precio_venta.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
-            this.txtbox_precio_venta.Name = "txtbox_precio_venta";
-            this.txtbox_precio_venta.Size = new System.Drawing.Size(178, 22);
-            this.txtbox_precio_venta.TabIndex = 4;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label8.Location = new System.Drawing.Point(-4, 9);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(18, 20);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "$";
             // 
             // view_editar_producto
             // 

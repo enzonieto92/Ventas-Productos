@@ -48,6 +48,8 @@ namespace Ventas_Productos.UI
             this.btn_todo = new System.Windows.Forms.Button();
             this.btn_hoy = new System.Windows.Forms.Button();
             this.pnl_botones = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_total_acumulado = new System.Windows.Forms.Label();
             this.pnl_ventas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_historial)).BeginInit();
             this.pnl_botones.SuspendLayout();
@@ -94,7 +96,7 @@ namespace Ventas_Productos.UI
             // 
             this.lbl_total.AutoSize = true;
             this.lbl_total.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_total.Font = new System.Drawing.Font("Lao Sans Pro", 12F);
+            this.lbl_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbl_total.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbl_total.Location = new System.Drawing.Point(447, 34);
             this.lbl_total.Name = "lbl_total";
@@ -107,7 +109,7 @@ namespace Ventas_Productos.UI
             // 
             this.lbl_fecha.AutoSize = true;
             this.lbl_fecha.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_fecha.Font = new System.Drawing.Font("Lao Sans Pro", 12F);
+            this.lbl_fecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.lbl_fecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbl_fecha.Location = new System.Drawing.Point(11, 34);
             this.lbl_fecha.Name = "lbl_fecha";
@@ -131,7 +133,7 @@ namespace Ventas_Productos.UI
             this.dgv_historial.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -163,7 +165,7 @@ namespace Ventas_Productos.UI
             this.dgv_historial.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_historial.RowHeadersVisible = false;
             this.dgv_historial.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Lao Sans Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(106)))), ((int)(((byte)(133)))));
             this.dgv_historial.RowsDefaultCellStyle = dataGridViewCellStyle8;
@@ -181,11 +183,11 @@ namespace Ventas_Productos.UI
             // lbl_productos
             // 
             this.lbl_productos.AutoSize = true;
-            this.lbl_productos.Font = new System.Drawing.Font("Lao Sans Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_productos.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_productos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lbl_productos.Location = new System.Drawing.Point(163, 42);
             this.lbl_productos.Name = "lbl_productos";
-            this.lbl_productos.Size = new System.Drawing.Size(213, 31);
+            this.lbl_productos.Size = new System.Drawing.Size(214, 29);
             this.lbl_productos.TabIndex = 14;
             this.lbl_productos.Text = "Historial de Ventas";
             // 
@@ -195,7 +197,7 @@ namespace Ventas_Productos.UI
             this.btn_cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.btn_cerrar.FlatAppearance.BorderSize = 0;
             this.btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cerrar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cerrar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_cerrar.Image = ((System.Drawing.Image)(resources.GetObject("btn_cerrar.Image")));
             this.btn_cerrar.Location = new System.Drawing.Point(510, -1);
@@ -217,7 +219,7 @@ namespace Ventas_Productos.UI
             this.btn_esta_semana.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(149)))), ((int)(((byte)(175)))));
             this.btn_esta_semana.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(141)))), ((int)(((byte)(155)))));
             this.btn_esta_semana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_esta_semana.Font = new System.Drawing.Font("Lao Sans Pro", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_esta_semana.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_esta_semana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_esta_semana.Location = new System.Drawing.Point(248, 0);
             this.btn_esta_semana.Name = "btn_esta_semana";
@@ -235,7 +237,7 @@ namespace Ventas_Productos.UI
             this.btn_este_mes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(149)))), ((int)(((byte)(175)))));
             this.btn_este_mes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(141)))), ((int)(((byte)(155)))));
             this.btn_este_mes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_este_mes.Font = new System.Drawing.Font("Lao Sans Pro", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_este_mes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_este_mes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_este_mes.Location = new System.Drawing.Point(169, 0);
             this.btn_este_mes.Name = "btn_este_mes";
@@ -253,7 +255,7 @@ namespace Ventas_Productos.UI
             this.btn_todo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(149)))), ((int)(((byte)(175)))));
             this.btn_todo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(141)))), ((int)(((byte)(155)))));
             this.btn_todo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_todo.Font = new System.Drawing.Font("Lao Sans Pro", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_todo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_todo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_todo.Location = new System.Drawing.Point(100, 0);
             this.btn_todo.Name = "btn_todo";
@@ -271,7 +273,7 @@ namespace Ventas_Productos.UI
             this.btn_hoy.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(149)))), ((int)(((byte)(175)))));
             this.btn_hoy.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(141)))), ((int)(((byte)(155)))));
             this.btn_hoy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_hoy.Font = new System.Drawing.Font("Lao Sans Pro", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_hoy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_hoy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_hoy.Location = new System.Drawing.Point(352, 0);
             this.btn_hoy.Name = "btn_hoy";
@@ -292,6 +294,28 @@ namespace Ventas_Productos.UI
             this.pnl_botones.Size = new System.Drawing.Size(512, 24);
             this.pnl_botones.TabIndex = 22;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label1.Location = new System.Drawing.Point(144, 565);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(93, 29);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Total: $";
+            // 
+            // lbl_total_acumulado
+            // 
+            this.lbl_total_acumulado.AutoSize = true;
+            this.lbl_total_acumulado.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbl_total_acumulado.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total_acumulado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lbl_total_acumulado.Location = new System.Drawing.Point(243, 565);
+            this.lbl_total_acumulado.Name = "lbl_total_acumulado";
+            this.lbl_total_acumulado.Size = new System.Drawing.Size(0, 29);
+            this.lbl_total_acumulado.TabIndex = 24;
+            // 
             // view_historial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -299,6 +323,8 @@ namespace Ventas_Productos.UI
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(106)))), ((int)(((byte)(133)))));
             this.ClientSize = new System.Drawing.Size(535, 657);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_total_acumulado);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.help_bar_panel);
             this.Controls.Add(this.pnl_ventas);
             this.Controls.Add(this.lbl_productos);
@@ -334,5 +360,7 @@ namespace Ventas_Productos.UI
         private Button btn_todo;
         private Button btn_hoy;
         private Panel pnl_botones;
+        private Label label1;
+        private Label lbl_total_acumulado;
     }
 }
