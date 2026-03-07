@@ -43,11 +43,11 @@ La decisión de desarrollarlo como aplicación de escritorio responde a una nece
 
 ```
 📁 screenshots/
-<img width="896" height="698" alt="image" src="https://github.com/user-attachments/assets/1504befd-b82c-49c3-ac92-3da1dcffba98" />
+![image](https://github.com/user-attachments/assets/1504befd-b82c-49c3-ac92-3da1dcffba98)
 
-<img width="418" height="548" alt="image" src="https://github.com/user-attachments/assets/17ef8ac9-1c98-4721-9575-5a676745facf" />
+![image](https://github.com/user-attachments/assets/17ef8ac9-1c98-4721-9575-5a676745facf)
 
-<img width="556" height="679" alt="image" src="https://github.com/user-attachments/assets/c2062910-3a4c-4e52-807a-b089efa8d32d" />
+![image](https://github.com/user-attachments/assets/c2062910-3a4c-4e52-807a-b089efa8d32d)
 
 ```
 
