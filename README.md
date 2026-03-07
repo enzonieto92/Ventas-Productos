@@ -28,12 +28,11 @@ La decisión de desarrollarlo como aplicación de escritorio responde a una nece
 
 ## ✨ Funcionalidades
 
-- [ ] _(Agregá aquí las funcionalidades de tu app, por ejemplo:)_
+- [ ] Sistema de búsqueda por código de barras y nombre (o prefijo)
 - [ ] Registro y procesamiento de ventas
 - [ ] Gestión de productos y precios
 - [ ] Historial de transacciones
-- [ ] Generación de tickets / comprobantes
-- [ ] Cierre de caja diario
+- [ ] Reportes de ganancias y stock
 
 ---
 
