@@ -61,7 +61,7 @@ La decisión de desarrollarlo como aplicación de escritorio responde a una nece
 
 1. Verificá que tenés instalado .NET Framework 4.7.2.
    - Si no lo tenés, descargalo desde el [sitio oficial de Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472).
-2. Descargá el instalador desde la sección [Releases](../../releases).
+2. Descargá el instalador desde la rama principal [Descargar instalador](../../raw/master/Gestión-Ventas.msi)
 3. Ejecutá el instalador y seguí los pasos.
 4. Una vez instalado, abrí la aplicación desde el acceso directo en el escritorio.
 
@@ -69,7 +69,7 @@ La decisión de desarrollarlo como aplicación de escritorio responde a una nece
 
 ```bash
 # Clonar el repositorio
-git clone https://github.com/tu-usuario/tu-repo.git
+git clone https://github.com/enzonieto92/Ventas-Productos.git
 
 # Abrir la solución en Visual Studio 2022
 # Compilar con Ctrl+Shift+B o desde el menú Build > Build Solution
@@ -77,10 +77,5 @@ git clone https://github.com/tu-usuario/tu-repo.git
 
 ---
 
-## 📄 Licencia
-
-Este proyecto está bajo la licencia [MIT](LICENSE) — podés usarlo, modificarlo y distribuirlo libremente.
-
----
 
 > Desarrollado con 💙 para negocios reales.
