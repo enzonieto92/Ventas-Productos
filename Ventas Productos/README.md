@@ -43,9 +43,12 @@ La decisión de desarrollarlo como aplicación de escritorio responde a una nece
 
 ```
 📁 screenshots/
-   ├── pantalla-principal.png
-   ├── nueva-venta.png
-   └── historial.png
+   ├──<img width="896" height="698" alt="image" src="https://github.com/user-attachments/assets/1504befd-b82c-49c3-ac92-3da1dcffba98" />
+
+   ├── <img width="418" height="548" alt="image" src="https://github.com/user-attachments/assets/17ef8ac9-1c98-4721-9575-5a676745facf" />
+
+   └── <img width="556" height="679" alt="image" src="https://github.com/user-attachments/assets/c2062910-3a4c-4e52-807a-b089efa8d32d" />
+
 ```
 
 ---
@@ -61,7 +64,7 @@ La decisión de desarrollarlo como aplicación de escritorio responde a una nece
 
 1. Verificá que tenés instalado .NET Framework 4.7.2.
    - Si no lo tenés, descargalo desde el [sitio oficial de Microsoft](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472).
-2. Descargá el instalador desde la rama principal [Descargar instalador](../../raw/master/Gestión-Ventas.msi)
+2. Descargá el instalador desde la rama principal [Descargar instalador](../../raw/master/Gestión%2Ventas.msi)
 3. Ejecutá el instalador y seguí los pasos.
 4. Una vez instalado, abrí la aplicación desde el acceso directo en el escritorio.
 
