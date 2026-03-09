@@ -388,6 +388,16 @@ namespace Ventas_Productos.Data
 
             return ventas;
         }
+        public decimal CalcularGanancias(List<Venta> ventas)
+        {
+            var ganancias = new decimal();
+            foreach (var venta in ventas)
+            {
+                var items = ObtenerItems(venta.IdVenta);
+                ganancias += items.Sum(i => i.Ganancia);
+            }
+            return ganancias;
+        }
         public List<Venta> ObtenerVentas(DateTime desde, DateTime hasta)
         {
             var ventas = new List<Venta>();
@@ -430,7 +440,7 @@ namespace Ventas_Productos.Data
             using (var conn = CrearConexion())
             {
                 string sql = @"
-            SELECT Nombre, Cantidad, PrecioUnitario
+            SELECT Nombre, Cantidad, PrecioCostoUnitario, PrecioVentaUnitario
             FROM VentaItem
             WHERE IdVenta = @ventaId";
 
@@ -446,7 +456,8 @@ namespace Ventas_Productos.Data
                             {
                                 NombreProducto = reader.GetString(0),
                                 Cantidad = Convert.ToInt32(reader.GetValue(1)),
-                                PrecioUnitario = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture)
+                                PrecioCostoUnitario = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture), 
+                                PrecioVentaUnitario = Convert.ToDecimal(reader.GetValue(3), CultureInfo.InvariantCulture)
                             });
                         }
                     }
@@ -491,15 +502,16 @@ namespace Ventas_Productos.Data
 
                         cmdItem.CommandText = @"
                     INSERT INTO VentaItem
-                    (IdVenta, IdProducto, Nombre, PrecioUnitario, Cantidad)
+                    (IdVenta, IdProducto, Nombre, PrecioCostoUnitario, PrecioVentaUnitario, Cantidad)
                     VALUES
-                    (@ventaId, @idProducto, @productoNombre, @precio, @cantidad);
+                    (@ventaId, @idProducto, @productoNombre, @precio_costo, @precio_venta, @cantidad);
                 ";
 
                         cmdItem.Parameters.AddWithValue("@ventaId", ventaId);
                         cmdItem.Parameters.AddWithValue("@idProducto", item.IdProducto);
                         cmdItem.Parameters.AddWithValue("@productoNombre", item.NombreProducto);
-                        cmdItem.Parameters.AddWithValue("@precio", item.PrecioUnitario);
+                        cmdItem.Parameters.AddWithValue("@precio_costo", item.PrecioCostoUnitario);
+                        cmdItem.Parameters.AddWithValue("@precio_venta", item.PrecioVentaUnitario);
                         cmdItem.Parameters.AddWithValue("@cantidad", item.Cantidad);
 
                         cmdItem.ExecuteNonQuery();

@@ -8,7 +8,8 @@ namespace Ventas_Productos.Domain
         private int VentaId { get; set; }
         public int IdProducto {  get; set; }
         public string NombreProducto { get; set; }
-        public decimal PrecioUnitario { get; set; }
+        public decimal PrecioVentaUnitario { get; set; }
+        public decimal PrecioCostoUnitario { get; set; }
         public int Cantidad { get; set; }
 
         public VentaItem()
@@ -20,8 +21,11 @@ namespace Ventas_Productos.Domain
             IdProducto = p.Id;
             NombreProducto = p.Nombre;
             Cantidad = p.Cantidad;
-            PrecioUnitario = p.Precio;
+            PrecioVentaUnitario = p.PrecioVenta;
+            PrecioCostoUnitario = p.PrecioCosto;
         }
+        public decimal Ganancia =>
+           (PrecioVentaUnitario - PrecioCostoUnitario) * Cantidad;
 
     }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace Ventas_Productos.UI
             this.DoubleBuffered = true;
             lbl_fecha_venta.Text = venta.Fecha.ToString();
             lbl_total_venta.Text = venta.Total.ToString();
+            lbl_ganancias.Text = items.Sum(i => i.Ganancia).ToString("C2", new System.Globalization.CultureInfo("es-AR"));
             dgv_items.DataSource = items;
 
             _snapBehavior = new FormDragSnapBehavior(this, help_bar_panel);
@@ -54,9 +56,11 @@ namespace Ventas_Productos.UI
         {
 
             dgv_items.Columns.Remove("IdProducto");
+            dgv_items.Columns.Remove("Ganancia");
             dgv_items.Columns["Cantidad"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
-            dgv_items.Columns["PrecioUnitario"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgv_items.Columns["PrecioUnitario"].DefaultCellStyle.Format = "C2";
+            dgv_items.Columns.Remove("PrecioCostoUnitario");
+            dgv_items.Columns["PrecioVentaUnitario"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgv_items.Columns["PrecioVentaUnitario"].DefaultCellStyle.Format = "C2";
         }
     }
 }

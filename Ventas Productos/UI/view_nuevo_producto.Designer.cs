@@ -64,6 +64,8 @@ namespace Ventas_Productos.UI
             this.btn_limpiar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtbox_precio_venta = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.srch_bar_panel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -204,6 +206,7 @@ namespace Ventas_Productos.UI
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtbox_precio_costo);
             this.panel2.Location = new System.Drawing.Point(76, 283);
@@ -442,6 +445,7 @@ namespace Ventas_Productos.UI
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.panel3.Controls.Add(this.label8);
             this.panel3.Controls.Add(this.txtbox_precio_venta);
             this.panel3.Location = new System.Drawing.Point(125, 349);
             this.panel3.Name = "panel3";
@@ -460,6 +464,28 @@ namespace Ventas_Productos.UI
             this.txtbox_precio_venta.Name = "txtbox_precio_venta";
             this.txtbox_precio_venta.Size = new System.Drawing.Size(178, 22);
             this.txtbox_precio_venta.TabIndex = 4;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label6.Location = new System.Drawing.Point(48, 11);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(18, 20);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "$";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label8.Location = new System.Drawing.Point(-1, 10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(18, 20);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "$";
             // 
             // view_nuevo_producto
             // 
@@ -536,5 +562,7 @@ namespace Ventas_Productos.UI
         private ToolStripMenuItem toolStripMenuItem10;
         private ToolStripMenuItem toolStripMenuItem9;
         private TextBox txtbox_precio_venta;
+        private Label label6;
+        private Label label8;
     }
 }

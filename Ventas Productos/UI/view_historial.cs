@@ -28,6 +28,7 @@ namespace Ventas_Productos.UI
         private void CargarVentas()
         {
             var historial = dbService.ObtenerVentas();
+            var ganancias = dbService.CalcularGanancias(historial);
             dgv_historial.DataSource = historial;
             dgv_historial.Columns["IdVenta"].Visible = false;
             dgv_historial.Columns["Total"].DefaultCellStyle.Format = "C2";
@@ -39,6 +40,7 @@ namespace Ventas_Productos.UI
             dgv_historial.ClearSelection();
             ActualizarScroll();
             CalcularTotal();
+            lbl_ganancias.Text = ganancias.ToString("C2", new System.Globalization.CultureInfo("es-AR"));
         }
         private void CalcularTotal()
         {
@@ -55,6 +57,7 @@ namespace Ventas_Productos.UI
         private void CargarVentas(DateTime desde, DateTime hasta)
         {
             var historial = dbService.ObtenerVentas(desde, hasta);
+            var ganancias = dbService.CalcularGanancias(historial);
             dgv_historial.DataSource = historial;
             dgv_historial.Columns["IdVenta"].Visible = false;
             dgv_historial.Columns["Total"].DefaultCellStyle.Format = "C2";
@@ -66,6 +69,7 @@ namespace Ventas_Productos.UI
             dgv_historial.ClearSelection();
             ActualizarScroll();
             CalcularTotal();
+            lbl_ganancias.Text = ganancias.ToString("C2", new System.Globalization.CultureInfo("es-AR"));
         }
         private void dgv_productos_MouseWheel(object sender, MouseEventArgs e)
         {

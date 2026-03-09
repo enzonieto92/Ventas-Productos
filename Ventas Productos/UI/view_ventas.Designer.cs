@@ -68,6 +68,8 @@ namespace Ventas_Productos
             this.panel_menu = new System.Windows.Forms.Panel();
             this.lbl_venta = new System.Windows.Forms.Label();
             this.panel_ventas = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_ganancias = new System.Windows.Forms.Label();
             this.lbl_borrar_seleccion = new System.Windows.Forms.Label();
             this.btn_borrar_seleccion = new System.Windows.Forms.Button();
             this.lbl_total_txt = new System.Windows.Forms.Label();
@@ -81,6 +83,7 @@ namespace Ventas_Productos
             this.pnl_productos = new System.Windows.Forms.Panel();
             this.scrollbar_productos = new ScrollBar();
             this.lbl_productos = new System.Windows.Forms.Label();
+            this.verEstadísticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).BeginInit();
             this.srch_bar_panel.SuspendLayout();
             this.help_bar_panel.SuspendLayout();
@@ -376,6 +379,8 @@ namespace Ventas_Productos
             // toolStripDropDownButton4
             // 
             this.toolStripDropDownButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verEstadísticasToolStripMenuItem});
             this.toolStripDropDownButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.toolStripDropDownButton4.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.toolStripDropDownButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -509,6 +514,8 @@ namespace Ventas_Productos
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_ventas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(106)))), ((int)(((byte)(133)))));
+            this.panel_ventas.Controls.Add(this.label4);
+            this.panel_ventas.Controls.Add(this.lbl_ganancias);
             this.panel_ventas.Controls.Add(this.lbl_borrar_seleccion);
             this.panel_ventas.Controls.Add(this.btn_borrar_seleccion);
             this.panel_ventas.Controls.Add(this.lbl_total_txt);
@@ -518,6 +525,35 @@ namespace Ventas_Productos
             this.panel_ventas.Name = "panel_ventas";
             this.panel_ventas.Size = new System.Drawing.Size(495, 491);
             this.panel_ventas.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label4.Location = new System.Drawing.Point(53, 429);
+            this.label4.Name = "label4";
+            this.label4.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
+            this.label4.Size = new System.Drawing.Size(203, 46);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Ganancias hoy:";
+            this.label4.UseCompatibleTextRendering = true;
+            // 
+            // lbl_ganancias
+            // 
+            this.lbl_ganancias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_ganancias.AutoSize = true;
+            this.lbl_ganancias.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_ganancias.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ganancias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbl_ganancias.Location = new System.Drawing.Point(272, 432);
+            this.lbl_ganancias.Name = "lbl_ganancias";
+            this.lbl_ganancias.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
+            this.lbl_ganancias.Size = new System.Drawing.Size(0, 43);
+            this.lbl_ganancias.TabIndex = 20;
+            this.lbl_ganancias.UseCompatibleTextRendering = true;
             // 
             // lbl_borrar_seleccion
             // 
@@ -751,6 +787,13 @@ namespace Ventas_Productos
             this.lbl_productos.TabIndex = 2;
             this.lbl_productos.Text = "Productos";
             // 
+            // verEstadísticasToolStripMenuItem
+            // 
+            this.verEstadísticasToolStripMenuItem.Name = "verEstadísticasToolStripMenuItem";
+            this.verEstadísticasToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
+            this.verEstadísticasToolStripMenuItem.Text = "Ver Estadísticas";
+            this.verEstadísticasToolStripMenuItem.Click += new System.EventHandler(this.verEstadísticasToolStripMenuItem_Click);
+            // 
             // view_ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -839,5 +882,8 @@ namespace Ventas_Productos
         private Button btn_borrar_seleccion;
         private Label lbl_borrar_seleccion;
         private ToolStripMenuItem acercaDeToolStripMenuItem;
+        private Label label4;
+        private Label lbl_ganancias;
+        private ToolStripMenuItem verEstadísticasToolStripMenuItem;
     }
 }

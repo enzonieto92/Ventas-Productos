@@ -50,6 +50,8 @@ namespace Ventas_Productos.UI
             this.pnl_botones = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_total_acumulado = new System.Windows.Forms.Label();
+            this.lbl_ganancias = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnl_ventas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_historial)).BeginInit();
             this.pnl_botones.SuspendLayout();
@@ -316,6 +318,28 @@ namespace Ventas_Productos.UI
             this.lbl_total_acumulado.Size = new System.Drawing.Size(0, 29);
             this.lbl_total_acumulado.TabIndex = 24;
             // 
+            // lbl_ganancias
+            // 
+            this.lbl_ganancias.AutoSize = true;
+            this.lbl_ganancias.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbl_ganancias.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ganancias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbl_ganancias.Location = new System.Drawing.Point(258, 606);
+            this.lbl_ganancias.Name = "lbl_ganancias";
+            this.lbl_ganancias.Size = new System.Drawing.Size(0, 29);
+            this.lbl_ganancias.TabIndex = 26;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label3.Location = new System.Drawing.Point(107, 606);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(132, 29);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Ganancias:";
+            // 
             // view_historial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -323,6 +347,8 @@ namespace Ventas_Productos.UI
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(106)))), ((int)(((byte)(133)))));
             this.ClientSize = new System.Drawing.Size(535, 657);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_ganancias);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_total_acumulado);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.help_bar_panel);
@@ -362,5 +388,7 @@ namespace Ventas_Productos.UI
         private Panel pnl_botones;
         private Label label1;
         private Label lbl_total_acumulado;
+        private Label lbl_ganancias;
+        private Label label3;
     }
 }

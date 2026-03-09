@@ -140,6 +140,7 @@ namespace Ventas_Productos.UI
             var productos = _dbService.ObtenerProductos(_scannerBuffer.ToString());
             dgv_productos.DataSource = productos;
             dgv_productos.Columns.Remove("Id");
+            dgv_productos.Columns.Remove("PrecioCosto");
             dgv_productos.Columns.Remove("CodigoBarras");
             var colEditar = dgv_productos.Columns["editar_producto"];
             var colEliminar = dgv_productos.Columns["eliminar_producto"];

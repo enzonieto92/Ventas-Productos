@@ -18,5 +18,6 @@ public class ProductoVenta : INotifyPropertyChanged
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Cantidad)));
         }
     }
-    public decimal Precio { get; set; }
+    public decimal PrecioCosto { get; set; }
+    public decimal PrecioVenta { get; set; }
 }

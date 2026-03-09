@@ -115,8 +115,17 @@ namespace Ventas_Productos
 
             var ventaService = new VentaService(dbService);
             ventaService.ConfirmarVenta(_seleccionados, _totalVenta);
-
             _seleccionados.Clear();
+            btn_confirmar.Enabled = false; btn_limpiar.Enabled = false;
+            CalcularGanancias();
+        }
+        private void CalcularGanancias()
+        {
+            DateTime desde = DateTime.Today;        // Hoy a las 00:00:00
+            DateTime hasta = DateTime.Now.AddMinutes(1);
+            var ventasHoy = dbService.ObtenerVentas(desde, hasta);
+            var gananciasHoy = dbService.CalcularGanancias(ventasHoy);
+            lbl_ganancias.Text = gananciasHoy.ToString("C2", new System.Globalization.CultureInfo("es-AR"));
         }
         private void view_ventas_Load(object sender, EventArgs e)
         {
@@ -149,8 +158,9 @@ namespace Ventas_Productos
             dgv_ventas.AutoGenerateColumns = true;
             dgv_ventas.DataSource = _seleccionados;
             dgv_ventas.Columns["Id"].Visible = false;
-            dgv_ventas.Columns["Precio"].DefaultCellStyle.Format = "C2";
-            dgv_ventas.Columns["Precio"].DefaultCellStyle.Alignment =
+            dgv_ventas.Columns["PrecioCosto"].Visible = false;
+            dgv_ventas.Columns["PrecioVenta"].DefaultCellStyle.Format = "C2";
+            dgv_ventas.Columns["PrecioVenta"].DefaultCellStyle.Alignment =
             DataGridViewContentAlignment.MiddleRight;
             dgv_ventas.Columns["Cantidad"].DefaultCellStyle.Alignment =
             DataGridViewContentAlignment.MiddleCenter;
@@ -162,7 +172,7 @@ namespace Ventas_Productos
             _totalVenta = 0;
 
             foreach (var item in _seleccionados)
-                _totalVenta += item.Precio * item.Cantidad;
+                _totalVenta += item.PrecioVenta * item.Cantidad;
 
             lbl_total.Text = _totalVenta.ToString("C2");
         }
@@ -282,7 +292,8 @@ namespace Ventas_Productos
                 {
                     Id = producto.Id,
                     Nombre = producto.Nombre,
-                    Precio = producto.PrecioVenta,
+                    PrecioCosto = producto.PrecioCosto,
+                    PrecioVenta = producto.PrecioVenta,
                     Cantidad = 1
                 });
             }
@@ -434,6 +445,12 @@ namespace Ventas_Productos
         {
             btn_confirmar.Enabled = true;
             btn_limpiar.Enabled = true;
+        }
+
+        private void verEstadísticasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            panel_menu.Controls.Clear();
+            panel_menu.Controls.Add(new DashboardControl());
         }
     }
 }
