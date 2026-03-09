@@ -198,7 +198,6 @@ namespace Ventas_Productos.UI
             this.txtbox_precio_costo.Name = "txtbox_precio_costo";
             this.txtbox_precio_costo.Size = new System.Drawing.Size(178, 22);
             this.txtbox_precio_costo.TabIndex = 3;
-            this.txtbox_precio_costo.TextChanged += new System.EventHandler(this.txtbox_precio_TextChanged);
             this.txtbox_precio_costo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtbox_precio_KeyDown);
             this.txtbox_precio_costo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtbox_precio_KeyPress);
             // 

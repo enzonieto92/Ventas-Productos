@@ -59,6 +59,7 @@ namespace Ventas_Productos
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.verStockToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.verEstadísticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton5 = new System.Windows.Forms.ToolStripDropDownButton();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_minimizar = new System.Windows.Forms.Button();
@@ -83,7 +84,6 @@ namespace Ventas_Productos
             this.pnl_productos = new System.Windows.Forms.Panel();
             this.scrollbar_productos = new ScrollBar();
             this.lbl_productos = new System.Windows.Forms.Label();
-            this.verEstadísticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).BeginInit();
             this.srch_bar_panel.SuspendLayout();
             this.help_bar_panel.SuspendLayout();
@@ -389,6 +389,13 @@ namespace Ventas_Productos
             this.toolStripDropDownButton4.Size = new System.Drawing.Size(79, 23);
             this.toolStripDropDownButton4.Text = "Reportes";
             // 
+            // verEstadísticasToolStripMenuItem
+            // 
+            this.verEstadísticasToolStripMenuItem.Name = "verEstadísticasToolStripMenuItem";
+            this.verEstadísticasToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
+            this.verEstadísticasToolStripMenuItem.Text = "Ver Estadísticas";
+            this.verEstadísticasToolStripMenuItem.Click += new System.EventHandler(this.verEstadísticasToolStripMenuItem_Click);
+            // 
             // toolStripDropDownButton5
             // 
             this.toolStripDropDownButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
@@ -418,7 +425,7 @@ namespace Ventas_Productos
             this.btn_minimizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_minimizar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_minimizar.Image = global::Ventas_Productos.Properties.Resources.minimize;
-            this.btn_minimizar.Location = new System.Drawing.Point(822, -2);
+            this.btn_minimizar.Location = new System.Drawing.Point(823, -2);
             this.btn_minimizar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_minimizar.Name = "btn_minimizar";
             this.btn_minimizar.Size = new System.Drawing.Size(24, 27);
@@ -436,7 +443,7 @@ namespace Ventas_Productos
             this.btn_max.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_max.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_max.Image = global::Ventas_Productos.Properties.Resources.maximize;
-            this.btn_max.Location = new System.Drawing.Point(846, 0);
+            this.btn_max.Location = new System.Drawing.Point(847, 0);
             this.btn_max.Margin = new System.Windows.Forms.Padding(4);
             this.btn_max.Name = "btn_max";
             this.btn_max.Size = new System.Drawing.Size(24, 25);
@@ -454,7 +461,7 @@ namespace Ventas_Productos
             this.btn_cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_cerrar.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.btn_cerrar.Image = global::Ventas_Productos.Properties.Resources.x;
-            this.btn_cerrar.Location = new System.Drawing.Point(873, 0);
+            this.btn_cerrar.Location = new System.Drawing.Point(874, 0);
             this.btn_cerrar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_cerrar.Name = "btn_cerrar";
             this.btn_cerrar.Size = new System.Drawing.Size(24, 23);
@@ -786,13 +793,6 @@ namespace Ventas_Productos
             this.lbl_productos.Size = new System.Drawing.Size(109, 25);
             this.lbl_productos.TabIndex = 2;
             this.lbl_productos.Text = "Productos";
-            // 
-            // verEstadísticasToolStripMenuItem
-            // 
-            this.verEstadísticasToolStripMenuItem.Name = "verEstadísticasToolStripMenuItem";
-            this.verEstadísticasToolStripMenuItem.Size = new System.Drawing.Size(193, 24);
-            this.verEstadísticasToolStripMenuItem.Text = "Ver Estadísticas";
-            this.verEstadísticasToolStripMenuItem.Click += new System.EventHandler(this.verEstadísticasToolStripMenuItem_Click);
             // 
             // view_ventas
             // 

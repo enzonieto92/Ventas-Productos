@@ -68,20 +68,8 @@ namespace Ventas_Productos.UI
                 MessageBox.Show("Producto Guardado!");
                 this.Close();
             }
-
         }
 
-        private void txtbox_precio_TextChanged(object sender, EventArgs e)
-        {
-            if (txtbox_precio_costo.Text != "")
-            {
-                CalcularPorcentaje();
-            }
-            else
-            {
-                txtbox_precio_venta.Text = "$ 0,00";
-            }
-        }
         private void CalcularPorcentaje()
         {
             var texto = toolStripDropDownButton1.Text;

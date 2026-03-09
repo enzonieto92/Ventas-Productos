@@ -129,6 +129,7 @@ namespace Ventas_Productos
         }
         private void view_ventas_Load(object sender, EventArgs e)
         {
+            CalcularGanancias();
             CargarProductos();
             CargarPanelVentas();
             ActualizarHora();
@@ -449,8 +450,8 @@ namespace Ventas_Productos
 
         private void verEstadísticasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            panel_menu.Controls.Clear();
-            panel_menu.Controls.Add(new DashboardControl());
+           // panel_menu.Controls.Clear();
+           // panel_menu.Controls.Add(new DashboardControl());
         }
     }
 }

@@ -17,9 +17,5 @@ namespace Ventas_Productos.UI
             InitializeComponent();
         }
 
-        private void DashboardControl_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

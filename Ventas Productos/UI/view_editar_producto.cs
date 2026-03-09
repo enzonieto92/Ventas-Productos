@@ -64,24 +64,12 @@ namespace Ventas_Productos.UI
                 Producto producto = new Producto();
                 producto.Nombre = txtbox_nombre.Text;
                 producto.PrecioCosto = Decimal.Parse(txtbox_precio_costo.Text);
-                producto.PrecioVenta = resultado;
+                producto.PrecioVenta = Decimal.Parse(txtbox_precio_venta.Text);
                 producto.CodigoBarras = txtbox_cod_barras.Text;
                 producto.Id = id;
                 _dbService.EditarProducto(producto);
                 this.Close();
 
-            }
-        }
-
-        private void txtbox_precio_TextChanged(object sender, EventArgs e)
-        {
-            if (txtbox_precio_costo.Text != "")
-            {
-                CalcularPorcentaje();
-            }
-            else
-            {
-                txtbox_precio_venta.Text = "$ 0,00";
             }
         }
         private void CalcularPorcentaje()
