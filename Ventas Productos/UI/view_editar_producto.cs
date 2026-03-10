@@ -48,7 +48,7 @@ namespace Ventas_Productos.UI
 
         private void btn_confirmar_Click(object sender, EventArgs e)
         {
-            if (txtbox_nombre.Text == "" || resultado == 0 || txtbox_cod_barras.Text == "")
+            if (txtbox_nombre.Text == "" || txtbox_cod_barras.Text == "" || txtbox_precio_costo.Text == "" || txtbox_precio_venta.Text == "")
             {
                 MessageBox.Show("Complete todos los datos");
                 return;

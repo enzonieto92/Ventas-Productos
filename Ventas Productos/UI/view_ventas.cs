@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Globalization;
@@ -448,10 +449,25 @@ namespace Ventas_Productos
             btn_limpiar.Enabled = true;
         }
 
+
+        private List<Control> _controlesOriginales = new List<Control>();
         private void verEstadísticasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // panel_menu.Controls.Clear();
-           // panel_menu.Controls.Add(new DashboardControl());
+            // Guardar controles originales
+            _controlesOriginales = panel_menu.Controls.Cast<Control>().ToList();
+
+            var dashboard = new DashboardControl();
+
+            dashboard.VolverAVentas += (s, ev) =>
+            {
+                panel_menu.Controls.Clear();
+                foreach (var control in _controlesOriginales)
+                    panel_menu.Controls.Add(control);
+                CargarProductos();
+            };
+
+            panel_menu.Controls.Clear();
+            panel_menu.Controls.Add(dashboard);
         }
     }
 }

@@ -62,7 +62,34 @@ namespace Ventas_Productos.Data
 
             return null;
         }
-
+        public List<VentaItem> ObtenerProductosMasVendidos()
+        {
+            using (var conn = CrearConexion())
+            {
+                string sql = @"
+                SELECT 
+                    Nombre,
+                    SUM(Cantidad) as total_vendido
+                FROM VentaItem
+                    GROUP BY Nombre
+                    ORDER BY total_vendido DESC
+                LIMIT 5";
+                var productosMasVendidos = new List<VentaItem>();
+                using (var cmd = new SqliteCommand(sql, conn))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        productosMasVendidos.Add(new VentaItem
+                        {
+                            NombreProducto = reader.GetString(0),
+                            Cantidad = Convert.ToInt32(reader.GetValue(1))
+                        });
+                    }
+                }
+                return productosMasVendidos;
+            }
+        }
         public void EliminarProducto(int id)
         {
             using (var conn = CrearConexion())
