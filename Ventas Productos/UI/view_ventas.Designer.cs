@@ -69,6 +69,7 @@ namespace Ventas_Productos
             this.panel_menu = new System.Windows.Forms.Panel();
             this.lbl_venta = new System.Windows.Forms.Label();
             this.panel_ventas = new System.Windows.Forms.Panel();
+            this.lbl_ojo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbl_ganancias = new System.Windows.Forms.Label();
             this.lbl_borrar_seleccion = new System.Windows.Forms.Label();
@@ -84,6 +85,7 @@ namespace Ventas_Productos
             this.pnl_productos = new System.Windows.Forms.Panel();
             this.scrollbar_productos = new ScrollBar();
             this.lbl_productos = new System.Windows.Forms.Label();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).BeginInit();
             this.srch_bar_panel.SuspendLayout();
             this.help_bar_panel.SuspendLayout();
@@ -94,6 +96,7 @@ namespace Ventas_Productos
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ventas)).BeginInit();
             this.pnl_der.SuspendLayout();
             this.pnl_productos.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv_productos
@@ -521,8 +524,8 @@ namespace Ventas_Productos
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_ventas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(106)))), ((int)(((byte)(133)))));
+            this.panel_ventas.Controls.Add(this.flowLayoutPanel2);
             this.panel_ventas.Controls.Add(this.label4);
-            this.panel_ventas.Controls.Add(this.lbl_ganancias);
             this.panel_ventas.Controls.Add(this.lbl_borrar_seleccion);
             this.panel_ventas.Controls.Add(this.btn_borrar_seleccion);
             this.panel_ventas.Controls.Add(this.lbl_total_txt);
@@ -533,6 +536,18 @@ namespace Ventas_Productos
             this.panel_ventas.Size = new System.Drawing.Size(495, 491);
             this.panel_ventas.TabIndex = 11;
             // 
+            // lbl_ojo
+            // 
+            this.lbl_ojo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_ojo.AutoSize = true;
+            this.lbl_ojo.Image = global::Ventas_Productos.Properties.Resources.cerrado;
+            this.lbl_ojo.Location = new System.Drawing.Point(62, 5);
+            this.lbl_ojo.MinimumSize = new System.Drawing.Size(34, 35);
+            this.lbl_ojo.Name = "lbl_ojo";
+            this.lbl_ojo.Size = new System.Drawing.Size(34, 35);
+            this.lbl_ojo.TabIndex = 13;
+            this.lbl_ojo.Click += new System.EventHandler(this.lbl_ojo_Click);
+            // 
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -540,7 +555,7 @@ namespace Ventas_Productos
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.label4.Location = new System.Drawing.Point(53, 429);
+            this.label4.Location = new System.Drawing.Point(15, 436);
             this.label4.Name = "label4";
             this.label4.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
             this.label4.Size = new System.Drawing.Size(203, 46);
@@ -555,11 +570,12 @@ namespace Ventas_Productos
             this.lbl_ganancias.BackColor = System.Drawing.Color.Transparent;
             this.lbl_ganancias.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ganancias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbl_ganancias.Location = new System.Drawing.Point(272, 432);
+            this.lbl_ganancias.Location = new System.Drawing.Point(3, 0);
             this.lbl_ganancias.Name = "lbl_ganancias";
             this.lbl_ganancias.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
-            this.lbl_ganancias.Size = new System.Drawing.Size(0, 43);
+            this.lbl_ganancias.Size = new System.Drawing.Size(53, 40);
             this.lbl_ganancias.TabIndex = 20;
+            this.lbl_ganancias.Text = "****";
             this.lbl_ganancias.UseCompatibleTextRendering = true;
             // 
             // lbl_borrar_seleccion
@@ -794,6 +810,16 @@ namespace Ventas_Productos
             this.lbl_productos.TabIndex = 2;
             this.lbl_productos.Text = "Productos";
             // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel2.Controls.Add(this.lbl_ganancias);
+            this.flowLayoutPanel2.Controls.Add(this.lbl_ojo);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(224, 438);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(228, 40);
+            this.flowLayoutPanel2.TabIndex = 23;
+            // 
             // view_ventas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -835,6 +861,8 @@ namespace Ventas_Productos
             this.pnl_der.ResumeLayout(false);
             this.pnl_productos.ResumeLayout(false);
             this.pnl_productos.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -885,5 +913,7 @@ namespace Ventas_Productos
         private Label label4;
         private Label lbl_ganancias;
         private ToolStripMenuItem verEstadísticasToolStripMenuItem;
+        private Label lbl_ojo;
+        private FlowLayoutPanel flowLayoutPanel2;
     }
 }

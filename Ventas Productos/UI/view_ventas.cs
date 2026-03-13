@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using Ventas_Productos.Data;
 using Ventas_Productos.Domain;
 using Ventas_Productos.UI;
+using Ventas_Productos.Properties;
+
 namespace Ventas_Productos
 {
     public partial class view_ventas : BaseForm
@@ -126,10 +128,18 @@ namespace Ventas_Productos
             DateTime hasta = DateTime.Now.AddMinutes(1);
             var ventasHoy = dbService.ObtenerVentas(desde, hasta);
             var gananciasHoy = dbService.CalcularGanancias(ventasHoy);
-            lbl_ganancias.Text = gananciasHoy.ToString("C2", new System.Globalization.CultureInfo("es-AR"));
+            if (lbl_ojo.Tag.ToString() == "abierto")
+            {
+                lbl_ganancias.Text = gananciasHoy.ToString("C2", new System.Globalization.CultureInfo("es-AR"));
+            }
+            else
+            {
+                lbl_ganancias.Text = "****";
+            }
         }
         private void view_ventas_Load(object sender, EventArgs e)
         {
+            lbl_ojo.Tag = "cerrado";
             CalcularGanancias();
             CargarProductos();
             CargarPanelVentas();
@@ -229,8 +239,12 @@ namespace Ventas_Productos
         }
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            view_historial form = new view_historial();
-            form.ShowDialog();
+            view_autenticar auth = new view_autenticar();
+            if (auth.ShowDialog() == DialogResult.OK)
+            {
+                view_historial form = new view_historial();
+                form.ShowDialog();
+            }
         }
 
         private void view_ventas_KeyPress(object sender, KeyPressEventArgs e)
@@ -300,6 +314,7 @@ namespace Ventas_Productos
                 });
             }
             txtbox_busqueda.Clear();
+            _scannerBuffer.Clear();
         }
         protected override void WndProc(ref Message m)
         {
@@ -428,7 +443,7 @@ namespace Ventas_Productos
             {
                 btn_borrar_seleccion.Enabled = true;
                 lbl_borrar_seleccion.ForeColor = Color.FromArgb(224, 224, 224);
-                
+
             }
             else
             {
@@ -469,5 +484,26 @@ namespace Ventas_Productos
             panel_menu.Controls.Clear();
             panel_menu.Controls.Add(dashboard);
         }
+
+        private void lbl_ojo_Click(object sender, EventArgs e)
+        {
+            if (lbl_ojo.Tag.ToString() == "abierto")
+            {
+                lbl_ganancias.Text = "****";
+                lbl_ojo.Image = Properties.Resources.cerrado;
+                lbl_ojo.Tag = "cerrado";
+            }
+            else
+            {
+                view_autenticar form = new view_autenticar();
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                        lbl_ganancias.Text = _totalVenta.ToString("C2");
+                        lbl_ojo.Image = Properties.Resources.abierto;
+                        lbl_ojo.Tag = "abierto";
+                }
+            }
+        }
     }
 }
+

@@ -31,6 +31,43 @@ namespace Ventas_Productos.Data
 
         // ================= PRODUCTOS =================
 
+        public void EliminarProducto(int id)
+        {
+            using (var conn = CrearConexion())
+            {
+                string sql = @"UPDATE Productos SET Activo = 0 WHERE Id = @id";
+
+                using (var cmd = new SqliteCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+
+                    if (filasAfectadas > 0)
+                        MessageBox.Show("Producto desactivado correctamente.");
+                    else
+                        MessageBox.Show("No se encontró ningún producto con ese Id.");
+                }
+            }
+        }
+        public void EditarProducto(Producto producto)
+        {
+            using (var conn = CrearConexion())
+            {
+                string sql = "UPDATE Productos SET Nombre = @nombre, precio_costo = @precio_costo, precio_venta = @precio_venta, cod_barras = @cod_barras WHERE Id = @id";
+                using (var cmd = new SqliteCommand(sql,conn))
+                {
+                    cmd.Parameters.AddWithValue("id", producto.Id);
+                    cmd.Parameters.AddWithValue("@nombre", producto.Nombre); 
+                    cmd.Parameters.AddWithValue("@precio_costo", producto.PrecioCosto);
+                    cmd.Parameters.AddWithValue("@precio_venta", producto.PrecioVenta);
+                    cmd.Parameters.AddWithValue("@cod_barras", producto.CodigoBarras);
+                    int filasAfectadas = cmd.ExecuteNonQuery(); 
+                    if (filasAfectadas > 0) 
+                        MessageBox.Show("Producto editado correctamente.");
+                    else MessageBox.Show("No se encontró el producto con ese Id.");
+                }
+            }
+        }
         public Producto ObtenerProducto(int id)
         {
             using (var conn = CrearConexion())
@@ -88,43 +125,6 @@ namespace Ventas_Productos.Data
                     }
                 }
                 return productosMasVendidos;
-            }
-        }
-        public void EliminarProducto(int id)
-        {
-            using (var conn = CrearConexion())
-            {
-                string sql = @"UPDATE Productos SET Activo = 0 WHERE Id = @id";
-
-                using (var cmd = new SqliteCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("@id", id);
-                    int filasAfectadas = cmd.ExecuteNonQuery();
-
-                    if (filasAfectadas > 0)
-                        MessageBox.Show("Producto desactivado correctamente.");
-                    else
-                        MessageBox.Show("No se encontró ningún producto con ese Id.");
-                }
-            }
-        }
-        public void EditarProducto(Producto producto)
-        {
-            using (var conn = CrearConexion())
-            {
-                string sql = "UPDATE Productos SET Nombre = @nombre, precio_costo = @precio_costo, precio_venta = @precio_venta, cod_barras = @cod_barras WHERE Id = @id";
-                using (var cmd = new SqliteCommand(sql,conn))
-                {
-                    cmd.Parameters.AddWithValue("id", producto.Id);
-                    cmd.Parameters.AddWithValue("@nombre", producto.Nombre); 
-                    cmd.Parameters.AddWithValue("@precio_costo", producto.PrecioCosto);
-                    cmd.Parameters.AddWithValue("@precio_venta", producto.PrecioVenta);
-                    cmd.Parameters.AddWithValue("@cod_barras", producto.CodigoBarras);
-                    int filasAfectadas = cmd.ExecuteNonQuery(); 
-                    if (filasAfectadas > 0) 
-                        MessageBox.Show("Producto editado correctamente.");
-                    else MessageBox.Show("No se encontró el producto con ese Id.");
-                }
             }
         }
         public List<Producto> ObtenerProductos(string busqueda)
@@ -198,7 +198,6 @@ namespace Ventas_Productos.Data
 
             return productos;
         }
-
         public List<ProductoStock> ObtenerProductosConStock(string busqueda)
         {
             {
@@ -385,36 +384,8 @@ namespace Ventas_Productos.Data
                 return productos;
             }
         }
+
         // ================= VENTAS =================
-        public List<Venta> ObtenerVentas()
-        {
-            var ventas = new List<Venta>();
-
-            using (var conn = CrearConexion())
-            {
-                string sql = "SELECT Id, Fecha, Total FROM Venta";
-
-                using (var cmd = new SqliteCommand(sql, conn))
-                using (var reader = cmd.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        ventas.Add(new Venta
-                        {
-                            IdVenta = Convert.ToInt32(reader.GetValue(0)),
-                            Fecha = DateTime.ParseExact(
-                                reader.GetString(1),
-                                "yyyy-MM-dd HH:mm:ss",
-                                CultureInfo.InvariantCulture),
-
-                            Total = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture)
-                        });
-                    }
-                }
-            }
-
-            return ventas;
-        }
         public decimal CalcularGanancias(List<Venta> ventas)
         {
             var ganancias = new decimal();
@@ -425,77 +396,6 @@ namespace Ventas_Productos.Data
             }
             return ganancias;
         }
-        public List<Venta> ObtenerVentas(DateTime desde, DateTime hasta)
-        {
-            var ventas = new List<Venta>();
-
-            using (var conn = CrearConexion())
-            {
-                string sql = "SELECT Id, Fecha, Total FROM Venta WHERE Fecha >= @desde and Fecha < @hasta";
-
-
-                using (var cmd = new SqliteCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("@desde", desde.ToString("yyyy-MM-dd HH:mm:ss"));
-                    cmd.Parameters.AddWithValue("@hasta", hasta.ToString("yyyy-MM-dd HH:mm:ss"));
-
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            ventas.Add(new Venta
-                            {
-                                IdVenta = Convert.ToInt32(reader.GetValue(0)),
-                                Fecha = DateTime.ParseExact(
-                                    reader.GetString(1),
-                                    "yyyy-MM-dd HH:mm:ss",
-                                    CultureInfo.InvariantCulture),
-
-                                Total = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture)
-                            });
-                        }
-                    }
-                }
-            }
-            return ventas;
-            }
-
-        public List<VentaItem> ObtenerItems(int ventaId)
-        {
-            var items = new List<VentaItem>();
-
-            using (var conn = CrearConexion())
-            {
-                string sql = @"
-            SELECT Nombre, Cantidad, PrecioCostoUnitario, PrecioVentaUnitario
-            FROM VentaItem
-            WHERE IdVenta = @ventaId";
-
-                using (var cmd = new SqliteCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("@ventaId", ventaId);
-
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            items.Add(new VentaItem
-                            {
-                                NombreProducto = reader.GetString(0),
-                                Cantidad = Convert.ToInt32(reader.GetValue(1)),
-                                PrecioCostoUnitario = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture), 
-                                PrecioVentaUnitario = Convert.ToDecimal(reader.GetValue(3), CultureInfo.InvariantCulture)
-                            });
-                        }
-                    }
-                }
-            }
-
-            return items;
-        }
-
-        // ================= GUARDAR VENTA =================
-
         public void GuardarVenta(Venta venta, List<VentaItem> items)
         {
             using (var conn = CrearConexion())
@@ -565,6 +465,187 @@ namespace Ventas_Productos.Data
                 tx.Commit();
             }
         }
+        public List<Venta> ObtenerVentas()
+        {
+            var ventas = new List<Venta>();
+
+            using (var conn = CrearConexion())
+            {
+                string sql = "SELECT Id, Fecha, Total FROM Venta";
+
+                using (var cmd = new SqliteCommand(sql, conn))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        ventas.Add(new Venta
+                        {
+                            IdVenta = Convert.ToInt32(reader.GetValue(0)),
+                            Fecha = DateTime.ParseExact(
+                                reader.GetString(1),
+                                "yyyy-MM-dd HH:mm:ss",
+                                CultureInfo.InvariantCulture),
+
+                            Total = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture)
+                        });
+                    }
+                }
+            }
+
+            return ventas;
+        }
+        public List<Venta> ObtenerVentas(DateTime desde, DateTime hasta)
+        {
+            var ventas = new List<Venta>();
+
+            using (var conn = CrearConexion())
+            {
+                string sql = "SELECT Id, Fecha, Total FROM Venta WHERE Fecha >= @desde and Fecha < @hasta";
+
+
+                using (var cmd = new SqliteCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@desde", desde.ToString("yyyy-MM-dd HH:mm:ss"));
+                    cmd.Parameters.AddWithValue("@hasta", hasta.ToString("yyyy-MM-dd HH:mm:ss"));
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            ventas.Add(new Venta
+                            {
+                                IdVenta = Convert.ToInt32(reader.GetValue(0)),
+                                Fecha = DateTime.ParseExact(
+                                    reader.GetString(1),
+                                    "yyyy-MM-dd HH:mm:ss",
+                                    CultureInfo.InvariantCulture),
+
+                                Total = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture)
+                            });
+                        }
+                    }
+                }
+            }
+            return ventas;
+            }
+        public List<VentaItem> ObtenerItems(int ventaId)
+        {
+            var items = new List<VentaItem>();
+
+            using (var conn = CrearConexion())
+            {
+                string sql = @"
+            SELECT Nombre, Cantidad, PrecioCostoUnitario, PrecioVentaUnitario
+            FROM VentaItem
+            WHERE IdVenta = @ventaId";
+
+                using (var cmd = new SqliteCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ventaId", ventaId);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            items.Add(new VentaItem
+                            {
+                                NombreProducto = reader.GetString(0),
+                                Cantidad = Convert.ToInt32(reader.GetValue(1)),
+                                PrecioCostoUnitario = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture), 
+                                PrecioVentaUnitario = Convert.ToDecimal(reader.GetValue(3), CultureInfo.InvariantCulture)
+                            });
+                        }
+                    }
+                }
+            }
+
+            return items;
+        }
+        public List<VentaSemanal> ObtenerVentasSemanales()
+        {
+            using (var conn = CrearConexion())
+            {
+                string sql = @"
+    SELECT NumSemana, Anio, PrimerDia, UltimoDia, TotalSemana
+    FROM (
+        SELECT 
+            strftime('%W', Fecha) AS NumSemana,
+            strftime('%Y', Fecha) AS Anio,
+            MIN(Fecha)            AS PrimerDia,
+            MAX(Fecha)            AS UltimoDia,
+            SUM(Total)            AS TotalSemana
+        FROM Venta
+        GROUP BY strftime('%Y', Fecha), strftime('%W', Fecha)
+        ORDER BY Anio DESC, NumSemana DESC
+        LIMIT 24
+    )
+    ORDER BY Anio ASC, NumSemana ASC";
+
+                var resultado = new List<VentaSemanal>();
+                using (var cmd = new SqliteCommand(sql, conn))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        var primerDia = DateTime.ParseExact(
+                            reader.GetString(2),
+                            "yyyy-MM-dd HH:mm:ss",
+                            CultureInfo.InvariantCulture);
+
+                        var ultimoDia = DateTime.ParseExact(
+                            reader.GetString(3),
+                            "yyyy-MM-dd HH:mm:ss",
+                            CultureInfo.InvariantCulture);
+
+                        resultado.Add(new VentaSemanal
+                        {
+                            // "3-7" → día del mes del primero y del último
+                            Etiqueta = $"{primerDia.Day}-{ultimoDia.Day}",
+                            TotalSemana = Convert.ToDecimal(reader.GetValue(4), CultureInfo.InvariantCulture)
+                        });
+                    }
+                }
+                return resultado;
+            }
+        }
+        public List<GananciaMensual> ObtenerGananciasMensuales()
+        {
+            using (var conn = CrearConexion())
+            {
+                string sql = @"
+            SELECT
+                strftime('%m', v.Fecha) AS Mes,
+                strftime('%Y', v.Fecha) AS Anio,
+                SUM((vi.PrecioVentaUnitario - vi.PrecioCostoUnitario) * vi.Cantidad) AS Ganancia
+            FROM VentaItem vi
+            JOIN Venta v ON v.Id = vi.IdVenta
+            GROUP BY strftime('%Y', v.Fecha), strftime('%m', v.Fecha)
+            ORDER BY Anio DESC, Mes DESC
+            LIMIT 12";
+
+                var resultado = new List<GananciaMensual>();
+                using (var cmd = new SqliteCommand(sql, conn))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int mes = Convert.ToInt32(reader.GetValue(0));
+                        int anio = Convert.ToInt32(reader.GetValue(1));
+
+                        var fecha = new DateTime(anio, mes, 1);
+
+                        resultado.Add(new GananciaMensual
+                        {
+                            Etiqueta = fecha.ToString("MMM yyyy", CultureInfo.GetCultureInfo("es-ES")),
+                            TotalGanancia = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture)
+                        });
+                    }
+                }
+
+                resultado.Reverse();
+                return resultado;
+            }
+        }
         // ================= GUARDAR PRODUCTO =================
 
         public long GuardarProducto(Producto producto)
@@ -619,7 +700,6 @@ namespace Ventas_Productos.Data
                     }
                 }
             }
-
         public void GuardarStock(ProductoStock producto)
         {
             using (var conn = CrearConexion())

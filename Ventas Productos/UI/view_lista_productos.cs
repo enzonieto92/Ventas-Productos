@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Ventas_Productos.Data;
@@ -12,6 +15,7 @@ namespace Ventas_Productos.UI
         private readonly FormDragSnapBehavior _snapBehavior;
         private readonly DatabaseService _dbService;
         private StringBuilder _scannerBuffer;
+        private List<Producto> productos;
         public view_lista_productos()
         {
             InitializeComponent();
@@ -132,12 +136,11 @@ namespace Ventas_Productos.UI
         private void ProcesarCodigo(string buffer)
         {
             _dbService.ObtenerProductos(buffer);
-
             CargarProductos();
         }
         private void CargarProductos()
         {
-            var productos = _dbService.ObtenerProductos(_scannerBuffer.ToString());
+            productos = _dbService.ObtenerProductos(_scannerBuffer.ToString());
             dgv_productos.DataSource = productos;
             dgv_productos.Columns.Remove("Id");
             dgv_productos.Columns.Remove("PrecioCosto");
@@ -176,6 +179,17 @@ namespace Ventas_Productos.UI
             {
                 e.ToolTipText = dgv_productos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value?.ToString();
             }
+        }
+
+        private void lbl_precio_Click(object sender, EventArgs e)
+        {
+            productos.OrderBy(p => p.PrecioVenta).ToList();
+
+        }
+
+        private void lbl_producto_Click(object sender, EventArgs e)
+        {
+            productos.OrderBy(p => p.Nombre).ToList();
         }
     }
 }

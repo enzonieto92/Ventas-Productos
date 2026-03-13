@@ -250,6 +250,7 @@
     <Compile Include="Domain\BorderController.cs" />
     <Compile Include="Domain\ColorTable.cs" />
     <Compile Include="Domain\FormSnapBehavior.cs" />
+    <Compile Include="Domain\GananciaMensual.cs" />
     <Compile Include="Domain\MyToolStrip_renderer.cs" />
     <Compile Include="Domain\Producto.cs" />
     <Compile Include="Domain\ProductoStock.cs" />
@@ -259,6 +260,7 @@
     </Compile>
     <Compile Include="Domain\Venta.cs" />
     <Compile Include="Domain\VentaItem.cs" />
+    <Compile Include="Domain\VentaSemanal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\base_view.cs">
@@ -333,7 +335,7 @@
     <Content Include="Sin-título.ico" />
     <Content Include="Ventas.ico" />
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>

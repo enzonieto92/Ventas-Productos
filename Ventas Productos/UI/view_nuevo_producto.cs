@@ -61,7 +61,7 @@ namespace Ventas_Productos.UI
                 Producto producto = new Producto();
                 producto.Nombre = txtbox_nombre.Text;
                 producto.PrecioCosto = Decimal.Parse(txtbox_precio_costo.Text);
-                producto.PrecioVenta = resultado;
+                producto.PrecioVenta = Decimal.Parse(txtbox_precio_venta.Text);
                 producto.CodigoBarras = txtbox_cod_barras.Text;
                 
                 _dbService.GuardarProducto(producto);
