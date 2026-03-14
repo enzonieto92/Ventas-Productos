@@ -31,23 +31,21 @@ namespace Ventas_Productos
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(view_ventas));
-            this.dgv_productos = new System.Windows.Forms.DataGridView();
-            this.btn_limpiar = new System.Windows.Forms.Button();
-            this.btn_confirmar = new System.Windows.Forms.Button();
-            this.txtbox_busqueda = new System.Windows.Forms.TextBox();
-            this.lbl_total = new System.Windows.Forms.Label();
+            this.usuario_context = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSesiónToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbl_fecha_hora = new System.Windows.Forms.Label();
             this.lbl_suma = new System.Windows.Forms.Label();
-            this.srch_bar_panel = new System.Windows.Forms.Panel();
-            this.icono_busqueda = new System.Windows.Forms.Label();
             this.help_bar_panel = new System.Windows.Forms.Panel();
             this.btn_user = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
@@ -65,165 +63,85 @@ namespace Ventas_Productos
             this.btn_minimizar = new System.Windows.Forms.Button();
             this.btn_max = new System.Windows.Forms.Button();
             this.btn_cerrar = new System.Windows.Forms.Button();
-            this.lbl_fecha_hora = new System.Windows.Forms.Label();
             this.panel_menu = new System.Windows.Forms.Panel();
             this.lbl_venta = new System.Windows.Forms.Label();
             this.panel_ventas = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.lbl_ganancias = new System.Windows.Forms.Label();
             this.lbl_ojo = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lbl_ganancias = new System.Windows.Forms.Label();
             this.lbl_borrar_seleccion = new System.Windows.Forms.Label();
             this.btn_borrar_seleccion = new System.Windows.Forms.Button();
             this.lbl_total_txt = new System.Windows.Forms.Label();
+            this.lbl_total = new System.Windows.Forms.Label();
             this.pnl_ventas = new System.Windows.Forms.Panel();
-            this.scrollbar_ventas = new ScrollBar();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_ventas = new System.Windows.Forms.DataGridView();
+            this.srch_bar_panel = new System.Windows.Forms.Panel();
+            this.icono_busqueda = new System.Windows.Forms.Label();
+            this.txtbox_busqueda = new System.Windows.Forms.TextBox();
             this.pnl_der = new System.Windows.Forms.Panel();
             this.pnl_productos = new System.Windows.Forms.Panel();
-            this.scrollbar_productos = new ScrollBar();
             this.lbl_productos = new System.Windows.Forms.Label();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).BeginInit();
-            this.srch_bar_panel.SuspendLayout();
+            this.dgv_productos = new System.Windows.Forms.DataGridView();
+            this.btn_confirmar = new System.Windows.Forms.Button();
+            this.btn_limpiar = new System.Windows.Forms.Button();
+            this.scrollbar_ventas = new ScrollBar();
+            this.scrollbar_productos = new ScrollBar();
+            this.usuario_context.SuspendLayout();
             this.help_bar_panel.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel_menu.SuspendLayout();
             this.panel_ventas.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
             this.pnl_ventas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ventas)).BeginInit();
+            this.srch_bar_panel.SuspendLayout();
             this.pnl_der.SuspendLayout();
             this.pnl_productos.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).BeginInit();
             this.SuspendLayout();
             // 
-            // dgv_productos
+            // usuario_context
             // 
-            this.dgv_productos.AllowUserToAddRows = false;
-            this.dgv_productos.AllowUserToDeleteRows = false;
-            this.dgv_productos.AllowUserToResizeColumns = false;
-            this.dgv_productos.AllowUserToResizeRows = false;
-            this.dgv_productos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_productos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_productos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.dgv_productos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgv_productos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_productos.ColumnHeadersVisible = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_productos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_productos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgv_productos.EnableHeadersVisualStyles = false;
-            this.dgv_productos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.dgv_productos.Location = new System.Drawing.Point(14, 50);
-            this.dgv_productos.MultiSelect = false;
-            this.dgv_productos.Name = "dgv_productos";
-            this.dgv_productos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_productos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_productos.RowHeadersVisible = false;
-            this.dgv_productos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(106)))), ((int)(((byte)(133)))));
-            this.dgv_productos.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgv_productos.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dgv_productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_productos.ShowCellErrors = false;
-            this.dgv_productos.ShowEditingIcon = false;
-            this.dgv_productos.ShowRowErrors = false;
-            this.dgv_productos.Size = new System.Drawing.Size(280, 331);
-            this.dgv_productos.StandardTab = true;
-            this.dgv_productos.TabIndex = 0;
-            this.dgv_productos.VirtualMode = true;
-            this.dgv_productos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_productos_CellDoubleClick);
-            this.dgv_productos.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.dgv_productos_CellToolTipTextNeeded);
+            this.usuario_context.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cerrarSesiónToolStripMenuItem,
+            this.cerrarSesiónToolStripMenuItem1});
+            this.usuario_context.Name = "usuario_context";
+            this.usuario_context.Size = new System.Drawing.Size(209, 74);
             // 
-            // btn_limpiar
+            // cerrarSesiónToolStripMenuItem
             // 
-            this.btn_limpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_limpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.btn_limpiar.Enabled = false;
-            this.btn_limpiar.FlatAppearance.BorderSize = 0;
-            this.btn_limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_limpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btn_limpiar.Location = new System.Drawing.Point(201, 438);
-            this.btn_limpiar.Name = "btn_limpiar";
-            this.btn_limpiar.Size = new System.Drawing.Size(116, 40);
-            this.btn_limpiar.TabIndex = 2;
-            this.btn_limpiar.Text = "Limpiar";
-            this.btn_limpiar.UseVisualStyleBackColor = false;
-            this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
+            this.cerrarSesiónToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(208, 24);
+            this.cerrarSesiónToolStripMenuItem.Text = "Autenticar Usuario";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
-            // btn_confirmar
+            // cerrarSesiónToolStripMenuItem1
             // 
-            this.btn_confirmar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btn_confirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.btn_confirmar.Enabled = false;
-            this.btn_confirmar.FlatAppearance.BorderSize = 0;
-            this.btn_confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_confirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_confirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btn_confirmar.Location = new System.Drawing.Point(3, 438);
-            this.btn_confirmar.Name = "btn_confirmar";
-            this.btn_confirmar.Size = new System.Drawing.Size(117, 40);
-            this.btn_confirmar.TabIndex = 3;
-            this.btn_confirmar.Text = "Confirmar";
-            this.btn_confirmar.UseVisualStyleBackColor = false;
-            this.btn_confirmar.Click += new System.EventHandler(this.btn_confirmar_Click);
+            this.cerrarSesiónToolStripMenuItem1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cerrarSesiónToolStripMenuItem1.Name = "cerrarSesiónToolStripMenuItem1";
+            this.cerrarSesiónToolStripMenuItem1.Size = new System.Drawing.Size(208, 24);
+            this.cerrarSesiónToolStripMenuItem1.Text = "Cerrar Sesión";
+            this.cerrarSesiónToolStripMenuItem1.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem1_Click);
             // 
-            // txtbox_busqueda
+            // lbl_fecha_hora
             // 
-            this.txtbox_busqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.txtbox_busqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.txtbox_busqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbox_busqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbox_busqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtbox_busqueda.Location = new System.Drawing.Point(51, 8);
-            this.txtbox_busqueda.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
-            this.txtbox_busqueda.Name = "txtbox_busqueda";
-            this.txtbox_busqueda.Size = new System.Drawing.Size(240, 22);
-            this.txtbox_busqueda.TabIndex = 6;
-            // 
-            // lbl_total
-            // 
-            this.lbl_total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_total.AutoSize = true;
-            this.lbl_total.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_total.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lbl_total.Location = new System.Drawing.Point(272, 385);
-            this.lbl_total.Name = "lbl_total";
-            this.lbl_total.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
-            this.lbl_total.Size = new System.Drawing.Size(86, 46);
-            this.lbl_total.TabIndex = 8;
-            this.lbl_total.Text = "$ 0,00";
-            this.lbl_total.UseCompatibleTextRendering = true;
+            this.lbl_fecha_hora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_fecha_hora.AutoSize = true;
+            this.lbl_fecha_hora.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_fecha_hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_fecha_hora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lbl_fecha_hora.Location = new System.Drawing.Point(690, 32);
+            this.lbl_fecha_hora.Name = "lbl_fecha_hora";
+            this.lbl_fecha_hora.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
+            this.lbl_fecha_hora.Size = new System.Drawing.Size(155, 25);
+            this.lbl_fecha_hora.TabIndex = 17;
+            this.lbl_fecha_hora.Text = "Jueves 12/12/12 59:59 hs";
+            this.lbl_fecha_hora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_suma
             // 
@@ -236,27 +154,6 @@ namespace Ventas_Productos
             this.lbl_suma.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
             this.lbl_suma.Size = new System.Drawing.Size(0, 40);
             this.lbl_suma.TabIndex = 9;
-            // 
-            // srch_bar_panel
-            // 
-            this.srch_bar_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.srch_bar_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.srch_bar_panel.Controls.Add(this.icono_busqueda);
-            this.srch_bar_panel.Controls.Add(this.txtbox_busqueda);
-            this.srch_bar_panel.Location = new System.Drawing.Point(540, 28);
-            this.srch_bar_panel.Name = "srch_bar_panel";
-            this.srch_bar_panel.Size = new System.Drawing.Size(317, 37);
-            this.srch_bar_panel.TabIndex = 10;
-            // 
-            // icono_busqueda
-            // 
-            this.icono_busqueda.AutoSize = true;
-            this.icono_busqueda.Image = global::Ventas_Productos.Properties.Resources.search;
-            this.icono_busqueda.Location = new System.Drawing.Point(11, 1);
-            this.icono_busqueda.MinimumSize = new System.Drawing.Size(34, 35);
-            this.icono_busqueda.Name = "icono_busqueda";
-            this.icono_busqueda.Size = new System.Drawing.Size(34, 35);
-            this.icono_busqueda.TabIndex = 12;
             // 
             // help_bar_panel
             // 
@@ -286,6 +183,7 @@ namespace Ventas_Productos
             this.btn_user.Size = new System.Drawing.Size(34, 24);
             this.btn_user.TabIndex = 14;
             this.btn_user.UseVisualStyleBackColor = false;
+            this.btn_user.Click += new System.EventHandler(this.btn_user_Click);
             // 
             // toolStrip1
             // 
@@ -475,21 +373,6 @@ namespace Ventas_Productos
             this.btn_cerrar.MouseEnter += new System.EventHandler(this.btn_cerrar_MouseEnter);
             this.btn_cerrar.MouseLeave += new System.EventHandler(this.btn_cerrar_MouseLeave);
             // 
-            // lbl_fecha_hora
-            // 
-            this.lbl_fecha_hora.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbl_fecha_hora.AutoSize = true;
-            this.lbl_fecha_hora.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_fecha_hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_fecha_hora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lbl_fecha_hora.Location = new System.Drawing.Point(690, 32);
-            this.lbl_fecha_hora.Name = "lbl_fecha_hora";
-            this.lbl_fecha_hora.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
-            this.lbl_fecha_hora.Size = new System.Drawing.Size(155, 25);
-            this.lbl_fecha_hora.TabIndex = 17;
-            this.lbl_fecha_hora.Text = "Jueves 12/12/12 59:59 hs";
-            this.lbl_fecha_hora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // panel_menu
             // 
             this.panel_menu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -536,6 +419,31 @@ namespace Ventas_Productos
             this.panel_ventas.Size = new System.Drawing.Size(495, 491);
             this.panel_ventas.TabIndex = 11;
             // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanel2.Controls.Add(this.lbl_ganancias);
+            this.flowLayoutPanel2.Controls.Add(this.lbl_ojo);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(224, 438);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(228, 40);
+            this.flowLayoutPanel2.TabIndex = 23;
+            // 
+            // lbl_ganancias
+            // 
+            this.lbl_ganancias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_ganancias.AutoSize = true;
+            this.lbl_ganancias.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_ganancias.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ganancias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.lbl_ganancias.Location = new System.Drawing.Point(3, 0);
+            this.lbl_ganancias.Name = "lbl_ganancias";
+            this.lbl_ganancias.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
+            this.lbl_ganancias.Size = new System.Drawing.Size(53, 40);
+            this.lbl_ganancias.TabIndex = 20;
+            this.lbl_ganancias.Text = "****";
+            this.lbl_ganancias.UseCompatibleTextRendering = true;
+            // 
             // lbl_ojo
             // 
             this.lbl_ojo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -562,21 +470,6 @@ namespace Ventas_Productos
             this.label4.TabIndex = 21;
             this.label4.Text = "Ganancias hoy:";
             this.label4.UseCompatibleTextRendering = true;
-            // 
-            // lbl_ganancias
-            // 
-            this.lbl_ganancias.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbl_ganancias.AutoSize = true;
-            this.lbl_ganancias.BackColor = System.Drawing.Color.Transparent;
-            this.lbl_ganancias.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ganancias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lbl_ganancias.Location = new System.Drawing.Point(3, 0);
-            this.lbl_ganancias.Name = "lbl_ganancias";
-            this.lbl_ganancias.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
-            this.lbl_ganancias.Size = new System.Drawing.Size(53, 40);
-            this.lbl_ganancias.TabIndex = 20;
-            this.lbl_ganancias.Text = "****";
-            this.lbl_ganancias.UseCompatibleTextRendering = true;
             // 
             // lbl_borrar_seleccion
             // 
@@ -626,6 +519,21 @@ namespace Ventas_Productos
             this.lbl_total_txt.Text = "Total: ";
             this.lbl_total_txt.UseCompatibleTextRendering = true;
             // 
+            // lbl_total
+            // 
+            this.lbl_total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbl_total.AutoSize = true;
+            this.lbl_total.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_total.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_total.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.lbl_total.Location = new System.Drawing.Point(272, 385);
+            this.lbl_total.Name = "lbl_total";
+            this.lbl_total.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
+            this.lbl_total.Size = new System.Drawing.Size(86, 46);
+            this.lbl_total.TabIndex = 8;
+            this.lbl_total.Text = "$ 0,00";
+            this.lbl_total.UseCompatibleTextRendering = true;
+            // 
             // pnl_ventas
             // 
             this.pnl_ventas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -641,18 +549,6 @@ namespace Ventas_Productos
             this.pnl_ventas.Name = "pnl_ventas";
             this.pnl_ventas.Size = new System.Drawing.Size(467, 334);
             this.pnl_ventas.TabIndex = 17;
-            // 
-            // scrollbar_ventas
-            // 
-            this.scrollbar_ventas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.scrollbar_ventas.LargeChange = 10;
-            this.scrollbar_ventas.Location = new System.Drawing.Point(448, 50);
-            this.scrollbar_ventas.Maximum = 100;
-            this.scrollbar_ventas.Minimum = 0;
-            this.scrollbar_ventas.Name = "scrollbar_ventas";
-            this.scrollbar_ventas.Size = new System.Drawing.Size(4, 265);
-            this.scrollbar_ventas.TabIndex = 4;
-            this.scrollbar_ventas.Text = "scrollBar1";
             // 
             // label3
             // 
@@ -708,24 +604,24 @@ namespace Ventas_Productos
             this.dgv_ventas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.dgv_ventas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgv_ventas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ventas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ventas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_ventas.ColumnHeadersVisible = false;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_ventas.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_ventas.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_ventas.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgv_ventas.EnableHeadersVisualStyles = false;
             this.dgv_ventas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
@@ -733,20 +629,20 @@ namespace Ventas_Productos
             this.dgv_ventas.MultiSelect = false;
             this.dgv_ventas.Name = "dgv_ventas";
             this.dgv_ventas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_ventas.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_ventas.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_ventas.RowHeadersVisible = false;
             this.dgv_ventas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(106)))), ((int)(((byte)(133)))));
-            this.dgv_ventas.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(106)))), ((int)(((byte)(133)))));
+            this.dgv_ventas.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_ventas.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.dgv_ventas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_ventas.ShowCellErrors = false;
@@ -759,6 +655,40 @@ namespace Ventas_Productos
             this.dgv_ventas.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.dgv_ventas_CellToolTipTextNeeded);
             this.dgv_ventas.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgv_ventas_RowsAdded);
             this.dgv_ventas.SelectionChanged += new System.EventHandler(this.dgv_ventas_SelectionChanged);
+            // 
+            // srch_bar_panel
+            // 
+            this.srch_bar_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.srch_bar_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.srch_bar_panel.Controls.Add(this.icono_busqueda);
+            this.srch_bar_panel.Controls.Add(this.txtbox_busqueda);
+            this.srch_bar_panel.Location = new System.Drawing.Point(540, 28);
+            this.srch_bar_panel.Name = "srch_bar_panel";
+            this.srch_bar_panel.Size = new System.Drawing.Size(317, 37);
+            this.srch_bar_panel.TabIndex = 10;
+            // 
+            // icono_busqueda
+            // 
+            this.icono_busqueda.AutoSize = true;
+            this.icono_busqueda.Image = global::Ventas_Productos.Properties.Resources.search;
+            this.icono_busqueda.Location = new System.Drawing.Point(11, 1);
+            this.icono_busqueda.MinimumSize = new System.Drawing.Size(34, 35);
+            this.icono_busqueda.Name = "icono_busqueda";
+            this.icono_busqueda.Size = new System.Drawing.Size(34, 35);
+            this.icono_busqueda.TabIndex = 12;
+            // 
+            // txtbox_busqueda
+            // 
+            this.txtbox_busqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtbox_busqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.txtbox_busqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbox_busqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_busqueda.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtbox_busqueda.Location = new System.Drawing.Point(51, 8);
+            this.txtbox_busqueda.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
+            this.txtbox_busqueda.Name = "txtbox_busqueda";
+            this.txtbox_busqueda.Size = new System.Drawing.Size(240, 22);
+            this.txtbox_busqueda.TabIndex = 6;
             // 
             // pnl_der
             // 
@@ -787,18 +717,6 @@ namespace Ventas_Productos
             this.pnl_productos.Size = new System.Drawing.Size(320, 400);
             this.pnl_productos.TabIndex = 12;
             // 
-            // scrollbar_productos
-            // 
-            this.scrollbar_productos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.scrollbar_productos.LargeChange = 10;
-            this.scrollbar_productos.Location = new System.Drawing.Point(303, 50);
-            this.scrollbar_productos.Maximum = 100;
-            this.scrollbar_productos.Minimum = 0;
-            this.scrollbar_productos.Name = "scrollbar_productos";
-            this.scrollbar_productos.Size = new System.Drawing.Size(4, 331);
-            this.scrollbar_productos.TabIndex = 3;
-            this.scrollbar_productos.Text = "scrollBar1";
-            // 
             // lbl_productos
             // 
             this.lbl_productos.AutoSize = true;
@@ -810,15 +728,127 @@ namespace Ventas_Productos
             this.lbl_productos.TabIndex = 2;
             this.lbl_productos.Text = "Productos";
             // 
-            // flowLayoutPanel2
+            // dgv_productos
             // 
-            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel2.Controls.Add(this.lbl_ganancias);
-            this.flowLayoutPanel2.Controls.Add(this.lbl_ojo);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(224, 438);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(228, 40);
-            this.flowLayoutPanel2.TabIndex = 23;
+            this.dgv_productos.AllowUserToAddRows = false;
+            this.dgv_productos.AllowUserToDeleteRows = false;
+            this.dgv_productos.AllowUserToResizeColumns = false;
+            this.dgv_productos.AllowUserToResizeRows = false;
+            this.dgv_productos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_productos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_productos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.dgv_productos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgv_productos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgv_productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_productos.ColumnHeadersVisible = false;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_productos.DefaultCellStyle = dataGridViewCellStyle14;
+            this.dgv_productos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dgv_productos.EnableHeadersVisualStyles = false;
+            this.dgv_productos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.dgv_productos.Location = new System.Drawing.Point(14, 50);
+            this.dgv_productos.MultiSelect = false;
+            this.dgv_productos.Name = "dgv_productos";
+            this.dgv_productos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_productos.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dgv_productos.RowHeadersVisible = false;
+            this.dgv_productos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(106)))), ((int)(((byte)(133)))));
+            this.dgv_productos.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgv_productos.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgv_productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_productos.ShowCellErrors = false;
+            this.dgv_productos.ShowEditingIcon = false;
+            this.dgv_productos.ShowRowErrors = false;
+            this.dgv_productos.Size = new System.Drawing.Size(280, 331);
+            this.dgv_productos.StandardTab = true;
+            this.dgv_productos.TabIndex = 0;
+            this.dgv_productos.VirtualMode = true;
+            this.dgv_productos.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_productos_CellDoubleClick);
+            this.dgv_productos.CellToolTipTextNeeded += new System.Windows.Forms.DataGridViewCellToolTipTextNeededEventHandler(this.dgv_productos_CellToolTipTextNeeded);
+            // 
+            // btn_confirmar
+            // 
+            this.btn_confirmar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btn_confirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.btn_confirmar.Enabled = false;
+            this.btn_confirmar.FlatAppearance.BorderSize = 0;
+            this.btn_confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_confirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_confirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_confirmar.Location = new System.Drawing.Point(3, 438);
+            this.btn_confirmar.Name = "btn_confirmar";
+            this.btn_confirmar.Size = new System.Drawing.Size(117, 40);
+            this.btn_confirmar.TabIndex = 3;
+            this.btn_confirmar.Text = "Confirmar";
+            this.btn_confirmar.UseVisualStyleBackColor = false;
+            this.btn_confirmar.Click += new System.EventHandler(this.btn_confirmar_Click);
+            // 
+            // btn_limpiar
+            // 
+            this.btn_limpiar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_limpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.btn_limpiar.Enabled = false;
+            this.btn_limpiar.FlatAppearance.BorderSize = 0;
+            this.btn_limpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_limpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_limpiar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_limpiar.Location = new System.Drawing.Point(201, 438);
+            this.btn_limpiar.Name = "btn_limpiar";
+            this.btn_limpiar.Size = new System.Drawing.Size(116, 40);
+            this.btn_limpiar.TabIndex = 2;
+            this.btn_limpiar.Text = "Limpiar";
+            this.btn_limpiar.UseVisualStyleBackColor = false;
+            this.btn_limpiar.Click += new System.EventHandler(this.btn_limpiar_Click);
+            // 
+            // scrollbar_ventas
+            // 
+            this.scrollbar_ventas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.scrollbar_ventas.LargeChange = 10;
+            this.scrollbar_ventas.Location = new System.Drawing.Point(448, 50);
+            this.scrollbar_ventas.Maximum = 100;
+            this.scrollbar_ventas.Minimum = 0;
+            this.scrollbar_ventas.Name = "scrollbar_ventas";
+            this.scrollbar_ventas.Size = new System.Drawing.Size(4, 265);
+            this.scrollbar_ventas.TabIndex = 4;
+            this.scrollbar_ventas.Text = "scrollBar1";
+            // 
+            // scrollbar_productos
+            // 
+            this.scrollbar_productos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.scrollbar_productos.LargeChange = 10;
+            this.scrollbar_productos.Location = new System.Drawing.Point(303, 50);
+            this.scrollbar_productos.Maximum = 100;
+            this.scrollbar_productos.Minimum = 0;
+            this.scrollbar_productos.Name = "scrollbar_productos";
+            this.scrollbar_productos.Size = new System.Drawing.Size(4, 331);
+            this.scrollbar_productos.TabIndex = 3;
+            this.scrollbar_productos.Text = "scrollBar1";
             // 
             // view_ventas
             // 
@@ -845,9 +875,7 @@ namespace Ventas_Productos
             this.Load += new System.EventHandler(this.view_ventas_Load);
             this.Shown += new System.EventHandler(this.view_ventas_Shown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.view_ventas_KeyPress);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).EndInit();
-            this.srch_bar_panel.ResumeLayout(false);
-            this.srch_bar_panel.PerformLayout();
+            this.usuario_context.ResumeLayout(false);
             this.help_bar_panel.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -855,14 +883,17 @@ namespace Ventas_Productos
             this.panel_menu.PerformLayout();
             this.panel_ventas.ResumeLayout(false);
             this.panel_ventas.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel2.PerformLayout();
             this.pnl_ventas.ResumeLayout(false);
             this.pnl_ventas.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_ventas)).EndInit();
+            this.srch_bar_panel.ResumeLayout(false);
+            this.srch_bar_panel.PerformLayout();
             this.pnl_der.ResumeLayout(false);
             this.pnl_productos.ResumeLayout(false);
             this.pnl_productos.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_productos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -915,5 +946,8 @@ namespace Ventas_Productos
         private ToolStripMenuItem verEstadísticasToolStripMenuItem;
         private Label lbl_ojo;
         private FlowLayoutPanel flowLayoutPanel2;
+        private ContextMenuStrip usuario_context;
+        private ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+        private ToolStripMenuItem cerrarSesiónToolStripMenuItem1;
     }
 }

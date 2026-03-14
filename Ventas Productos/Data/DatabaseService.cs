@@ -54,15 +54,15 @@ namespace Ventas_Productos.Data
             using (var conn = CrearConexion())
             {
                 string sql = "UPDATE Productos SET Nombre = @nombre, precio_costo = @precio_costo, precio_venta = @precio_venta, cod_barras = @cod_barras WHERE Id = @id";
-                using (var cmd = new SqliteCommand(sql,conn))
+                using (var cmd = new SqliteCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("id", producto.Id);
-                    cmd.Parameters.AddWithValue("@nombre", producto.Nombre); 
+                    cmd.Parameters.AddWithValue("@nombre", producto.Nombre);
                     cmd.Parameters.AddWithValue("@precio_costo", producto.PrecioCosto);
                     cmd.Parameters.AddWithValue("@precio_venta", producto.PrecioVenta);
                     cmd.Parameters.AddWithValue("@cod_barras", producto.CodigoBarras);
-                    int filasAfectadas = cmd.ExecuteNonQuery(); 
-                    if (filasAfectadas > 0) 
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+                    if (filasAfectadas > 0)
                         MessageBox.Show("Producto editado correctamente.");
                     else MessageBox.Show("No se encontró el producto con ese Id.");
                 }
@@ -176,24 +176,24 @@ namespace Ventas_Productos.Data
                 }
 
                 using (var cmd = new SqliteCommand(sql, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@busqueda", busqueda);
+                {
+                    cmd.Parameters.AddWithValue("@busqueda", busqueda);
 
-                        using (var reader = cmd.ExecuteReader())
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
                         {
-                            while (reader.Read())
+                            productos.Add(new Producto
                             {
-                                productos.Add(new Producto
-                                {
-                                    Id = Convert.ToInt32(reader.GetValue(0)),
-                                    Nombre = reader.GetString(1),
-                                    PrecioCosto = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture),
-                                    PrecioVenta = Convert.ToDecimal(reader.GetValue(3), CultureInfo.InvariantCulture),
-                                    CodigoBarras = reader.IsDBNull(4) ? null : reader.GetString(4)
-                                });
-                            }
+                                Id = Convert.ToInt32(reader.GetValue(0)),
+                                Nombre = reader.GetString(1),
+                                PrecioCosto = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture),
+                                PrecioVenta = Convert.ToDecimal(reader.GetValue(3), CultureInfo.InvariantCulture),
+                                CodigoBarras = reader.IsDBNull(4) ? null : reader.GetString(4)
+                            });
                         }
                     }
+                }
             }
 
             return productos;
@@ -386,6 +386,7 @@ namespace Ventas_Productos.Data
         }
 
         // ================= VENTAS =================
+
         public decimal CalcularGanancias(List<Venta> ventas)
         {
             var ganancias = new decimal();
@@ -527,7 +528,7 @@ namespace Ventas_Productos.Data
                 }
             }
             return ventas;
-            }
+        }
         public List<VentaItem> ObtenerItems(int ventaId)
         {
             var items = new List<VentaItem>();
@@ -551,7 +552,7 @@ namespace Ventas_Productos.Data
                             {
                                 NombreProducto = reader.GetString(0),
                                 Cantidad = Convert.ToInt32(reader.GetValue(1)),
-                                PrecioCostoUnitario = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture), 
+                                PrecioCostoUnitario = Convert.ToDecimal(reader.GetValue(2), CultureInfo.InvariantCulture),
                                 PrecioVentaUnitario = Convert.ToDecimal(reader.GetValue(3), CultureInfo.InvariantCulture)
                             });
                         }
@@ -646,60 +647,61 @@ namespace Ventas_Productos.Data
                 return resultado;
             }
         }
+
         // ================= GUARDAR PRODUCTO =================
 
         public long GuardarProducto(Producto producto)
+        {
+            using (var conn = CrearConexion())
+            using (var tx = conn.BeginTransaction())
             {
-                using (var conn = CrearConexion())
-                using (var tx = conn.BeginTransaction())
+                try
                 {
-                    try
+                    long productoId;
+
+                    using (var cmd = conn.CreateCommand())
                     {
-                        long productoId;
+                        cmd.Transaction = tx;
 
-                        using (var cmd = conn.CreateCommand())
-                        {
-                            cmd.Transaction = tx;
-
-                            cmd.CommandText = @"
+                        cmd.CommandText = @"
                                 INSERT INTO Productos (nombre, precio_costo, precio_venta, cod_barras, activo)
                                 VALUES (@nombre, @precio_costo, @precio_venta, @cod_barras, 1);
 
                                 SELECT last_insert_rowid();
                             ";
 
-                            cmd.Parameters.AddWithValue("@nombre", producto.Nombre);
-                            cmd.Parameters.AddWithValue("@precio_costo", producto.PrecioCosto.ToString(CultureInfo.InvariantCulture));
-                            cmd.Parameters.AddWithValue("@precio_venta", producto.PrecioVenta.ToString(CultureInfo.InvariantCulture));
-                            cmd.Parameters.AddWithValue("@cod_barras", producto.CodigoBarras);
-                            productoId = Convert.ToInt64(cmd.ExecuteScalar());
-                        }
+                        cmd.Parameters.AddWithValue("@nombre", producto.Nombre);
+                        cmd.Parameters.AddWithValue("@precio_costo", producto.PrecioCosto.ToString(CultureInfo.InvariantCulture));
+                        cmd.Parameters.AddWithValue("@precio_venta", producto.PrecioVenta.ToString(CultureInfo.InvariantCulture));
+                        cmd.Parameters.AddWithValue("@cod_barras", producto.CodigoBarras);
+                        productoId = Convert.ToInt64(cmd.ExecuteScalar());
+                    }
 
-                        using (var cmdStock = conn.CreateCommand())
-                        {
-                            cmdStock.Transaction = tx;
+                    using (var cmdStock = conn.CreateCommand())
+                    {
+                        cmdStock.Transaction = tx;
 
-                            cmdStock.CommandText = @"
+                        cmdStock.CommandText = @"
                                 INSERT INTO Stock (IdProducto, Cantidad)
                                 VALUES (@productoId, @cantidadInicial);
                             ";
 
-                            cmdStock.Parameters.AddWithValue("@productoId", productoId);
-                            cmdStock.Parameters.AddWithValue("@cantidadInicial", 1);
+                        cmdStock.Parameters.AddWithValue("@productoId", productoId);
+                        cmdStock.Parameters.AddWithValue("@cantidadInicial", 1);
 
-                            cmdStock.ExecuteNonQuery();
-                        }
+                        cmdStock.ExecuteNonQuery();
+                    }
 
-                        tx.Commit();
-                        return productoId;
-                    }
-                    catch
-                    {
-                        tx.Rollback();
-                        throw;
-                    }
+                    tx.Commit();
+                    return productoId;
+                }
+                catch
+                {
+                    tx.Rollback();
+                    throw;
                 }
             }
+        }
         public void GuardarStock(ProductoStock producto)
         {
             using (var conn = CrearConexion())
@@ -715,6 +717,32 @@ namespace Ventas_Productos.Data
                     else MessageBox.Show("No se encontró el producto con ese Id.");
                 }
             }
+        }
+
+        // ================= USUARIOS =================
+
+        public List<Usuario> TraerUsuarios()
+        {
+            var usuarios = new List<Usuario>();
+            using (var conn = CrearConexion())
+            {
+                string sql = "SELECT Id, Rol, Nombre, contrasena FROM Usuarios";
+                using (var cmd = new SqliteCommand(sql, conn))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        usuarios.Add(new Usuario
+                        {
+                            Id = Convert.ToInt32(reader.GetValue(0)),
+                            Rol = reader.GetString(1),
+                            Nombre = reader.GetString(2),
+                            Contraseña = reader.GetString(3)
+                        });
+                    }
+                }
+            }
+            return usuarios;
         }
     }
 }

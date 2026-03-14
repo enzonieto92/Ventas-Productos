@@ -110,8 +110,8 @@ namespace Ventas_Productos.UI
         {
             var producto = (ProductoStock)dgv_productos.SelectedRows[0].DataBoundItem;
             view_autenticar aut = new view_autenticar();
-            var resultado = aut.ShowDialog();
 
+            var resultado = aut.ShowDialog();
             if (resultado == DialogResult.OK)
             {
                 view_editar_stock view = new view_editar_stock(producto);
@@ -119,10 +119,6 @@ namespace Ventas_Productos.UI
             }
             else if (resultado == DialogResult.No)
             {
-                {
-                    MessageBox.Show("Contraseña incorrecta");
-                }
-
                 CargarProductos();
             }
         }

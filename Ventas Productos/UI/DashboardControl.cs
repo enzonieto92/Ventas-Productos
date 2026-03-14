@@ -3,8 +3,10 @@ using LiveCharts.Wpf;
 using Ventas_Productos.Data;
 using System.Linq;
 using System;
-using System.Windows.Forms;
+using System.Drawing;
 using System.Windows.Media;
+using System.Windows.Forms;
+using Ventas_Productos.Domain;
 namespace Ventas_Productos.UI
 {
     public partial class DashboardControl : UserControl
@@ -54,7 +56,9 @@ namespace Ventas_Productos.UI
                 LabelFormatter = v => v.ToString("N0"),
                 Separator = new Separator { IsEnabled = false }
             });
-            cartesianChart1.Background = new SolidColorBrush(Color.FromRgb(83, 106, 133));
+            cartesianChart1.Background =
+    new System.Windows.Media.SolidColorBrush(
+        System.Windows.Media.Color.FromRgb(83, 106, 133));
         }
         private void CargarVentasSemanales()
         {
@@ -90,7 +94,7 @@ namespace Ventas_Productos.UI
                 Separator = new Separator { IsEnabled = false }
             });
 
-            cartesianChart2.Background = new SolidColorBrush(Color.FromRgb(83, 106, 133));
+            cartesianChart2.Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(83, 106, 133));
         }
         private void CargarGanancias()
         {
@@ -124,8 +128,9 @@ namespace Ventas_Productos.UI
                 Separator = new Separator { IsEnabled = false }
             });
 
-            cartesianChart3.Background = new SolidColorBrush(Color.FromRgb(83, 106, 133));
+            cartesianChart3.Background = new System.Windows.Media.SolidColorBrush(System.Windows.Media.Color.FromRgb(83, 106, 133));
         }
+
         private void btn_confirmar_Click(object sender, EventArgs e)
         {
             VolverAVentas?.Invoke(this, EventArgs.Empty);

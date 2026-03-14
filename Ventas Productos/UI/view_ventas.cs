@@ -23,6 +23,7 @@ namespace Ventas_Productos
         private StringBuilder _scannerBuffer;
         private decimal _totalVenta;
         private readonly Timer _timer;
+        private Usuario _usuario;
         public view_ventas()
         {
             InitializeComponent();
@@ -178,6 +179,21 @@ namespace Ventas_Productos
             DataGridViewContentAlignment.MiddleCenter;
             dgv_ventas.ClearSelection();
             ActualizarScroll2();
+            if (_usuario != null)
+            {
+                if (_usuario.Rol == "Admin")
+                {
+                    btn_user.Image = Resources.user_admin;
+                }
+                else if (_usuario.Rol == "Invitado")
+                {
+
+                }
+            }
+            else            
+            {
+                btn_user.Image = Resources.user;
+            }
         }
         private void ActualizarTotal()
         {
@@ -239,8 +255,25 @@ namespace Ventas_Productos
         }
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            view_autenticar auth = new view_autenticar();
-            if (auth.ShowDialog() == DialogResult.OK)
+            if (_usuario == null)
+            {
+                view_autenticar auth = new view_autenticar();
+
+                if (auth.ShowDialog() == DialogResult.OK)
+                {
+                    _usuario = auth.UsuarioAutenticado;
+                    CargarPanelVentas();
+                    view_historial form = new view_historial();
+                    form.ShowDialog();
+                    return; // <- esto evita que siga ejecutando
+                }
+                else
+                {
+                    return;
+                }
+            }
+
+            if (_usuario.Rol == "Admin")
             {
                 view_historial form = new view_historial();
                 form.ShowDialog();
@@ -464,27 +497,58 @@ namespace Ventas_Productos
             btn_limpiar.Enabled = true;
         }
 
+        private DashboardControl dashboard;
 
-        private List<Control> _controlesOriginales = new List<Control>();
         private void verEstadísticasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            // Guardar controles originales
-            _controlesOriginales = panel_menu.Controls.Cast<Control>().ToList();
-
-            var dashboard = new DashboardControl();
-
-            dashboard.VolverAVentas += (s, ev) =>
+            if (_usuario == null)
             {
-                panel_menu.Controls.Clear();
-                foreach (var control in _controlesOriginales)
-                    panel_menu.Controls.Add(control);
-                CargarProductos();
-            };
-
-            panel_menu.Controls.Clear();
-            panel_menu.Controls.Add(dashboard);
+                view_autenticar auth = new view_autenticar();
+                if (auth.ShowDialog() == DialogResult.OK)
+                {
+                    _usuario = auth.UsuarioAutenticado;
+                    CargarPanelVentas();
+                    AbrirEstadisticas();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            else if (_usuario.Rol == "Admin")
+            {
+                AbrirEstadisticas();
+            }
+            return;
         }
 
+        private void AbrirEstadisticas()
+        {
+            if (dashboard == null)
+            {
+                dashboard = new DashboardControl();
+                dashboard.Dock = DockStyle.Fill;
+
+                dashboard.VolverAVentas += (s, ev) =>
+                {
+                    dashboard.Visible = false;
+
+                    foreach (Control c in panel_menu.Controls)
+                        if (c != dashboard)
+                            c.Visible = true;
+
+                    CargarProductos();
+                };
+
+                panel_menu.Controls.Add(dashboard);
+            }
+            foreach (Control c in panel_menu.Controls)
+                if (c != dashboard)
+                    c.Visible = false;
+
+            dashboard.Visible = true;
+            dashboard.BringToFront();
+        }
         private void lbl_ojo_Click(object sender, EventArgs e)
         {
             if (lbl_ojo.Tag.ToString() == "abierto")
@@ -495,12 +559,59 @@ namespace Ventas_Productos
             }
             else
             {
-                view_autenticar form = new view_autenticar();
-                if (form.ShowDialog() == DialogResult.OK)
+                if (_usuario == null)
                 {
+                    view_autenticar auth = new view_autenticar();
+
+                    if (auth.ShowDialog() == DialogResult.OK)
+                    {
+                        _usuario = auth.UsuarioAutenticado;
+                        CargarPanelVentas();
                         lbl_ganancias.Text = _totalVenta.ToString("C2");
                         lbl_ojo.Image = Properties.Resources.abierto;
                         lbl_ojo.Tag = "abierto";
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+
+                if (_usuario.Rol == "Admin")
+                {
+                    lbl_ganancias.Text = _totalVenta.ToString("C2");
+                    lbl_ojo.Image = Properties.Resources.abierto;
+                    lbl_ojo.Tag = "abierto";
+                }
+
+            }
+        }
+
+        private void btn_user_Click(object sender, EventArgs e)
+        {
+            btn_user.ContextMenuStrip = usuario_context;
+                usuario_context.Show(btn_user, new Point(0, btn_user.Height));
+        }
+
+        private void cerrarSesiónToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            _usuario = null;
+            CargarPanelVentas();
+        }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (_usuario == null)
+            {
+                view_autenticar auth = new view_autenticar();
+                if (auth.ShowDialog() == DialogResult.OK)
+                {
+                    _usuario = auth.UsuarioAutenticado;
+                    CargarPanelVentas();
+                }
+                else
+                {
+                    return;
                 }
             }
         }

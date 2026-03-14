@@ -248,6 +248,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Compile Include="Domain\BorderController.cs" />
+    <Compile Include="Domain\CardPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Domain\ColorTable.cs" />
     <Compile Include="Domain\FormSnapBehavior.cs" />
     <Compile Include="Domain\GananciaMensual.cs" />
@@ -258,6 +261,7 @@
     <Compile Include="Domain\Scrollbar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Domain\Usuario.cs" />
     <Compile Include="Domain\Venta.cs" />
     <Compile Include="Domain\VentaItem.cs" />
     <Compile Include="Domain\VentaSemanal.cs" />
