@@ -23,7 +23,7 @@ namespace Ventas_Productos
         private StringBuilder _scannerBuffer;
         private decimal _totalVenta;
         private readonly Timer _timer;
-        private Usuario _usuario;
+        private string _ganancias;
         public view_ventas()
         {
             InitializeComponent();
@@ -121,7 +121,11 @@ namespace Ventas_Productos
             ventaService.ConfirmarVenta(_seleccionados, _totalVenta);
             _seleccionados.Clear();
             btn_confirmar.Enabled = false; btn_limpiar.Enabled = false;
-            CalcularGanancias();
+            if (lbl_ojo.Tag.ToString() == "abierto")
+            {
+                    CalcularGanancias();
+                               lbl_ganancias.Text = _ganancias;
+            }
         }
         private void CalcularGanancias()
         {
@@ -129,14 +133,7 @@ namespace Ventas_Productos
             DateTime hasta = DateTime.Now.AddMinutes(1);
             var ventasHoy = dbService.ObtenerVentas(desde, hasta);
             var gananciasHoy = dbService.CalcularGanancias(ventasHoy);
-            if (lbl_ojo.Tag.ToString() == "abierto")
-            {
-                lbl_ganancias.Text = gananciasHoy.ToString("C2", new System.Globalization.CultureInfo("es-AR"));
-            }
-            else
-            {
-                lbl_ganancias.Text = "****";
-            }
+            _ganancias = gananciasHoy.ToString("C2");
         }
         private void view_ventas_Load(object sender, EventArgs e)
         {
@@ -179,18 +176,22 @@ namespace Ventas_Productos
             DataGridViewContentAlignment.MiddleCenter;
             dgv_ventas.ClearSelection();
             ActualizarScroll2();
-            if (_usuario != null)
+            VerificarAutenticacion();
+        }
+        private void VerificarAutenticacion()
+        {
+            if (Sesion.Usuario != null)
             {
-                if (_usuario.Rol == "Admin")
+                if (Sesion.Usuario.Rol == "Admin")
                 {
                     btn_user.Image = Resources.user_admin;
                 }
-                else if (_usuario.Rol == "Invitado")
+                else if (Sesion.Usuario.Rol == "Invitado")
                 {
 
                 }
             }
-            else            
+            else
             {
                 btn_user.Image = Resources.user;
             }
@@ -255,13 +256,13 @@ namespace Ventas_Productos
         }
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (_usuario == null)
+            if (Sesion.Usuario == null)
             {
                 view_autenticar auth = new view_autenticar();
 
                 if (auth.ShowDialog() == DialogResult.OK)
                 {
-                    _usuario = auth.UsuarioAutenticado;
+                    Sesion.Autenticar(auth.UsuarioAutenticado);
                     CargarPanelVentas();
                     view_historial form = new view_historial();
                     form.ShowDialog();
@@ -273,7 +274,7 @@ namespace Ventas_Productos
                 }
             }
 
-            if (_usuario.Rol == "Admin")
+            if (Sesion.Usuario.Rol == "Admin")
             {
                 view_historial form = new view_historial();
                 form.ShowDialog();
@@ -441,8 +442,9 @@ namespace Ventas_Productos
         }
         private void verStockToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            view_stock view_Stock = new view_stock();
+            view_stock view_Stock = new view_stock(Sesion.Usuario);
             view_Stock.ShowDialog();
+            CargarPanelVentas();
             CargarProductos();
         }
 
@@ -501,12 +503,12 @@ namespace Ventas_Productos
 
         private void verEstadísticasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (_usuario == null)
+            if (Sesion.Usuario == null)
             {
                 view_autenticar auth = new view_autenticar();
                 if (auth.ShowDialog() == DialogResult.OK)
                 {
-                    _usuario = auth.UsuarioAutenticado;
+                    Sesion.Autenticar(auth.UsuarioAutenticado);
                     CargarPanelVentas();
                     AbrirEstadisticas();
                 }
@@ -515,7 +517,7 @@ namespace Ventas_Productos
                     return;
                 }
             }
-            else if (_usuario.Rol == "Admin")
+            else if (Sesion.Usuario.Rol == "Admin")
             {
                 AbrirEstadisticas();
             }
@@ -559,17 +561,18 @@ namespace Ventas_Productos
             }
             else
             {
-                if (_usuario == null)
+                if (Sesion.Usuario == null)
                 {
                     view_autenticar auth = new view_autenticar();
 
                     if (auth.ShowDialog() == DialogResult.OK)
                     {
-                        _usuario = auth.UsuarioAutenticado;
-                        CargarPanelVentas();
-                        lbl_ganancias.Text = _totalVenta.ToString("C2");
+                        Sesion.Autenticar(auth.UsuarioAutenticado);
+                        CalcularGanancias();
+                        lbl_ganancias.Text = _ganancias;
                         lbl_ojo.Image = Properties.Resources.abierto;
                         lbl_ojo.Tag = "abierto";
+                        CargarPanelVentas();
                     }
                     else
                     {
@@ -577,9 +580,10 @@ namespace Ventas_Productos
                     }
                 }
 
-                if (_usuario.Rol == "Admin")
+                if (Sesion.Usuario.Rol == "Admin")
                 {
-                    lbl_ganancias.Text = _totalVenta.ToString("C2");
+                    CalcularGanancias();
+                    lbl_ganancias.Text = _ganancias;
                     lbl_ojo.Image = Properties.Resources.abierto;
                     lbl_ojo.Tag = "abierto";
                 }
@@ -589,24 +593,23 @@ namespace Ventas_Productos
 
         private void btn_user_Click(object sender, EventArgs e)
         {
-            btn_user.ContextMenuStrip = usuario_context;
                 usuario_context.Show(btn_user, new Point(0, btn_user.Height));
         }
 
         private void cerrarSesiónToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            _usuario = null;
+            Sesion.CerrarSesion();
             CargarPanelVentas();
         }
 
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (_usuario == null)
+            if (Sesion.Usuario == null)
             {
                 view_autenticar auth = new view_autenticar();
                 if (auth.ShowDialog() == DialogResult.OK)
                 {
-                    _usuario = auth.UsuarioAutenticado;
+                    Sesion.Autenticar(auth.UsuarioAutenticado);
                     CargarPanelVentas();
                 }
                 else

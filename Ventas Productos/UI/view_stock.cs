@@ -19,9 +19,11 @@ namespace Ventas_Productos.UI
         private string _scannerBuffer;
         private readonly FormDragSnapBehavior _snapBehavior;
         private readonly DatabaseService _dbService;
-        public view_stock()
+        private Usuario _usuario;
+        public view_stock(Usuario usuario)
         {
             InitializeComponent();
+            _usuario = usuario;
             _dbService = new DatabaseService();
             _snapBehavior = new FormDragSnapBehavior(this, help_bar_panel);
             scrollbar_productos.Scroll += (s, e) =>
@@ -70,7 +72,9 @@ namespace Ventas_Productos.UI
 
             dgv_productos.DataSource = productos;
             dgv_productos.Columns.Remove("CodigoBarras");
-            dgv_productos.Columns.Remove("PrecioVenta");
+            dgv_productos.Columns["PrecioVenta"].DefaultCellStyle.Format = //formato moneda
+                System.Globalization.CultureInfo.CurrentCulture.NumberFormat.CurrencySymbol + " #,##0.00";
+            dgv_productos.Columns["PrecioVenta"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgv_productos.Columns.Remove("PrecioCosto");
             dgv_productos.Columns.Remove("Id");
             dgv_productos.Columns["Stock"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -108,40 +112,72 @@ namespace Ventas_Productos.UI
 
         private void btn_editar_Click(object sender, EventArgs e)
         {
-            var producto = (ProductoStock)dgv_productos.SelectedRows[0].DataBoundItem;
-            view_autenticar aut = new view_autenticar();
-
-            var resultado = aut.ShowDialog();
-            if (resultado == DialogResult.OK)
+           var producto = (ProductoStock)dgv_productos.SelectedRows[0].DataBoundItem;
+           if (_usuario == null)
             {
-                view_editar_stock view = new view_editar_stock(producto);
-                view.ShowDialog();
+                view_autenticar aut = new view_autenticar();
+                var resultado = aut.ShowDialog();
+                if (resultado == DialogResult.OK)
+                {
+                    Sesion.Autenticar(aut.UsuarioAutenticado);
+                    _usuario = aut.UsuarioAutenticado;
+                    view_editar_stock view = new view_editar_stock(producto);
+                    view.ShowDialog();
+                }
+                else if (resultado == DialogResult.No)
+                {
+                    CargarProductos();
+                }
             }
-            else if (resultado == DialogResult.No)
+            else
             {
-                CargarProductos();
+
+                if (_usuario.Rol == "Admin")
+                {
+                    view_editar_stock view = new view_editar_stock(producto);
+                    view.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("No tienes permisos para editar el stock");
+                }
             }
         }
 
         private void dgv_productos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+
             var producto = (ProductoStock)dgv_productos.SelectedRows[0].DataBoundItem;
-            view_autenticar aut = new view_autenticar();
-            var resultado = aut.ShowDialog();
-
-            if (resultado == DialogResult.OK)
+            if (_usuario == null)
             {
-                view_editar_stock view = new view_editar_stock(producto);
-                view.ShowDialog();
-            }
-            else if (resultado == DialogResult.No)
-            {
+                view_autenticar aut = new view_autenticar();
+                var resultado = aut.ShowDialog();
+                if (resultado == DialogResult.OK)
                 {
-                    MessageBox.Show("Contraseña incorrecta");
+                    Sesion.Autenticar(aut.UsuarioAutenticado);
+                    _usuario = aut.UsuarioAutenticado;
+                    view_editar_stock view = new view_editar_stock(producto);
+                    view.ShowDialog();
                 }
+                else if (resultado == DialogResult.No)
+                {
+                    CargarProductos();
+                }
+            }
+            else
+            {
 
-                CargarProductos();
+                if (_usuario.Rol == "Admin")
+                {
+                    view_editar_stock view = new view_editar_stock(producto);
+                    view.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("No tienes permisos para editar el stock");
+                }
             }
         }
     }
+ 
 }

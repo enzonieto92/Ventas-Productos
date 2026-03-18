@@ -33,11 +33,13 @@
             this.btn_confirmar = new System.Windows.Forms.Button();
             this.srch_bar_panel = new System.Windows.Forms.Panel();
             this.icono_busqueda = new System.Windows.Forms.Label();
+            this.txtbox_contraseña = new System.Windows.Forms.TextBox();
             this.txtbox_nombre = new System.Windows.Forms.TextBox();
             this.help_bar_panel = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtbox_contraseña = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.srch_bar_panel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -49,12 +51,12 @@
             this.lbl_fecha_hora.BackColor = System.Drawing.Color.Transparent;
             this.lbl_fecha_hora.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_fecha_hora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.lbl_fecha_hora.Location = new System.Drawing.Point(103, 25);
+            this.lbl_fecha_hora.Location = new System.Drawing.Point(71, 90);
             this.lbl_fecha_hora.Name = "lbl_fecha_hora";
             this.lbl_fecha_hora.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
-            this.lbl_fecha_hora.Size = new System.Drawing.Size(137, 25);
+            this.lbl_fecha_hora.Size = new System.Drawing.Size(54, 25);
             this.lbl_fecha_hora.TabIndex = 0;
-            this.lbl_fecha_hora.Text = "Escriba la contraseña";
+            this.lbl_fecha_hora.Text = "Usuario";
             this.lbl_fecha_hora.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_cerrar
@@ -85,7 +87,7 @@
             this.btn_confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_confirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_confirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btn_confirmar.Location = new System.Drawing.Point(110, 223);
+            this.btn_confirmar.Location = new System.Drawing.Point(113, 250);
             this.btn_confirmar.Name = "btn_confirmar";
             this.btn_confirmar.Size = new System.Drawing.Size(117, 40);
             this.btn_confirmar.TabIndex = 3;
@@ -98,7 +100,7 @@
             this.srch_bar_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.srch_bar_panel.Controls.Add(this.icono_busqueda);
             this.srch_bar_panel.Controls.Add(this.txtbox_contraseña);
-            this.srch_bar_panel.Location = new System.Drawing.Point(65, 172);
+            this.srch_bar_panel.Location = new System.Drawing.Point(68, 190);
             this.srch_bar_panel.Name = "srch_bar_panel";
             this.srch_bar_panel.Size = new System.Drawing.Size(205, 37);
             this.srch_bar_panel.TabIndex = 2;
@@ -113,6 +115,22 @@
             this.icono_busqueda.Name = "icono_busqueda";
             this.icono_busqueda.Size = new System.Drawing.Size(34, 35);
             this.icono_busqueda.TabIndex = 0;
+            // 
+            // txtbox_contraseña
+            // 
+            this.txtbox_contraseña.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtbox_contraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
+            this.txtbox_contraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbox_contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbox_contraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.txtbox_contraseña.Location = new System.Drawing.Point(41, 7);
+            this.txtbox_contraseña.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
+            this.txtbox_contraseña.Name = "txtbox_contraseña";
+            this.txtbox_contraseña.PasswordChar = '*';
+            this.txtbox_contraseña.Size = new System.Drawing.Size(141, 22);
+            this.txtbox_contraseña.TabIndex = 1;
             // 
             // txtbox_nombre
             // 
@@ -144,7 +162,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.txtbox_nombre);
-            this.panel1.Location = new System.Drawing.Point(68, 104);
+            this.panel1.Location = new System.Drawing.Point(71, 122);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(205, 37);
             this.panel1.TabIndex = 1;
@@ -160,21 +178,35 @@
             this.label1.Size = new System.Drawing.Size(34, 35);
             this.label1.TabIndex = 0;
             // 
-            // txtbox_contraseña
+            // label2
             // 
-            this.txtbox_contraseña.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtbox_contraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(99)))), ((int)(((byte)(115)))));
-            this.txtbox_contraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtbox_contraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtbox_contraseña.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.txtbox_contraseña.Location = new System.Drawing.Point(41, 7);
-            this.txtbox_contraseña.Margin = new System.Windows.Forms.Padding(3, 9, 3, 9);
-            this.txtbox_contraseña.Name = "txtbox_contraseña";
-            this.txtbox_contraseña.PasswordChar = '*';
-            this.txtbox_contraseña.Size = new System.Drawing.Size(141, 22);
-            this.txtbox_contraseña.TabIndex = 1;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label2.Location = new System.Drawing.Point(71, 159);
+            this.label2.Name = "label2";
+            this.label2.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
+            this.label2.Size = new System.Drawing.Size(76, 25);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Contraseña";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.label3.Location = new System.Drawing.Point(114, 38);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(0, 9, 0, 0);
+            this.label3.Size = new System.Drawing.Size(122, 33);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Iniciar Sesión";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // view_autenticar
             // 
@@ -183,8 +215,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(106)))), ((int)(((byte)(133)))));
             this.CancelButton = this.btn_cerrar;
-            this.ClientSize = new System.Drawing.Size(348, 305);
+            this.ClientSize = new System.Drawing.Size(348, 323);
             this.ControlBox = false;
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl_fecha_hora);
             this.Controls.Add(this.btn_cerrar);
@@ -223,5 +257,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtbox_contraseña;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
     }
 }

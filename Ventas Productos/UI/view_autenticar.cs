@@ -7,7 +7,7 @@ namespace Ventas_Productos.UI
 {
     public partial class view_autenticar : BaseForm
     {
-        public Usuario UsuarioAutenticado { get; private set; }
+        public Usuario UsuarioAutenticado { get; set; }
         private DatabaseService _databaseService  = new DatabaseService();
         public view_autenticar()
         {
@@ -35,9 +35,9 @@ namespace Ventas_Productos.UI
             {
                 if (user.Nombre == txtbox_contraseña.Text && user.Contraseña == txtbox_nombre.Text)
                 {
+                    Sesion.Autenticar(user); // <-- esto
                     this.DialogResult = DialogResult.OK;
                     UsuarioAutenticado = user;
-                    Debug.Write(user.Rol);
                     this.Close();
                     return;
                 }

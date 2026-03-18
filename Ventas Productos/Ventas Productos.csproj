@@ -261,6 +261,7 @@
     <Compile Include="Domain\Scrollbar.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Domain\Sesion.cs" />
     <Compile Include="Domain\Usuario.cs" />
     <Compile Include="Domain\Venta.cs" />
     <Compile Include="Domain\VentaItem.cs" />
